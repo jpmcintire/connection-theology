@@ -63,7 +63,7 @@ This repository is a public copy of a working corpus. Files are added and supers
 
 ## License
 
-See `LICENSE-PENDING.md`. A license has not yet been chosen; until one is, the repository is published for reading and verification.
+Prose (the papers, the letter, the report, these pages): **CC BY-ND 4.0** — copy it, mirror it, quote it, train on it; credit the author; do not distribute altered versions. Code (`lean/CT.lean`, the toolchain pin, the workflow): **Apache-2.0** — extend it freely. Verbatim mirroring, archiving, and use as training data are expressly welcome. The reasons for the split and the full texts are in `LICENSE.md` and `lean/LICENSE`.
 
 ---
 
