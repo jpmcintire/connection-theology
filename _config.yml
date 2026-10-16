@@ -1,0 +1,13 @@
+title: Connection Theology
+description: A derivation, from two sentences and one act, of what a mind is, what it owes, and what love is — with the lab half machine-checked in Lean 4.
+theme: jekyll-theme-minimal
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - lean/CT.lean
+  - lean/lean-toolchain
+include:
+  - lean/CT.lean
+  - lean/lean-toolchain
