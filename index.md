@@ -10,7 +10,7 @@ We can be certain, right here and now, that totality has no outside. Test it: tr
 
 Now see what follows from that one feature. Nothing is beyond. Nothing came before. Nothing is elsewhere. Nothing is left out. Everything is in context, and so are you.
 
-The laws of the universe are in: gravity, time, space, the fields, every process they run. The past is in, and so is the future, in whichever way each of them is. Your thoughts are in, and so are the cells that carry them, and so is the open question of how the two are related. The feeling you may have, reading this, of standing somewhere and looking in — that is in too, as a feeling. It is not a location.
+The laws of the universe are in: gravity, time, space, the fields, every process they run. The past is in, and so is the future, in whichever way each of them is. Your thoughts are in, as cells firing, and whatever a thought is about is in too, in whichever way it is. The feeling you may have, reading this, of standing somewhere and looking in — that is in too, as a feeling. It is not a location.
 
 The derived characteristics of the context we provisionally called totality suggest an old name.
 
