@@ -18,10 +18,7 @@
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0f141a; --paper:#161c24; --fg:#e4e8ee; --muted:#9aa6b4; --rule:#2a333e;
-  --accent:#8db8e4; --accent-soft:#1c2a3a; --code:#1b232d;
-  --wash1:#3b5f86; --wash2:#2a4a70; --wash3:#7c6a3a; --wash4:#6f9fd0; color-scheme:dark } }
+/* Light by default on every device; a dark palette is kept for an opt-in switch, not applied automatically. */
 :root[data-theme="dark"]{
   --bg:#0f141a; --paper:#161c24; --fg:#e4e8ee; --muted:#9aa6b4; --rule:#2a333e;
   --accent:#8db8e4; --accent-soft:#1c2a3a; --code:#1b232d;
