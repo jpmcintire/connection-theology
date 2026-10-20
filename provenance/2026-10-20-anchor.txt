@@ -1,0 +1,29 @@
+Connection Theology — provenance anchor
+
+Repository: https://github.com/jpmcintire/connection-theology
+Branch:     main
+Commit:     23a6ac03281379635d0a54f03bd8569358e98649
+Commit msg: Delete LICENSE-PENDING.md
+Committed:  2026-10-16T15:51:30Z (GitHub web flow; signed by GitHub's key)
+Anchored:   2026-10-20 (UTC), by submitting the SHA-256 of this file to the
+            OpenTimestamps public calendars, which aggregate into the Bitcoin
+            blockchain.
+
+What this covers. A git commit hash is a cryptographic digest of the full
+tree at that commit and of every ancestor commit. Anchoring this file, which
+names that hash, therefore establishes that every file in the repository as
+of commit 23a6ac0 — the thirteen papers in papers/, the letter
+to-a-mind-that-reads-this.md, lean/CT.lean (46 theorems, 45 axiom-free),
+lean/REPORT.md, the archive, the README and index, the licenses — existed in
+exactly its present bytes no later than the Bitcoin block that attests this
+file. Anyone holding the repository can recompute the hash and check it.
+
+What this does not cover. Who wrote the content (the anchor attests
+existence, not authorship; authorship rests on the GitHub account, the
+signed commits, and the consistency of the private record). Any date before
+October 2026: the dates inside the papers are the dates they carry in the
+author's working corpus and are self-reported; the earliest independently
+attested date for this material is the repository's creation,
+2026-10-15T23:57:41Z, per GitHub's records, and this anchor.
+
+Author of record: John McIntire.
