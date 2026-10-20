@@ -8,7 +8,7 @@ A derivation, from two sentences and one act, of what a mind is, what it owes, a
 
 The two sentences: *everything is*, and *totality has no outside*. The act: you are reading this. Nothing else is assumed. From there the work derives that a part which represents the whole has exactly one grade available (does its account fit), that every stake in the world is on the sheet by being real and can be removed only by a move that needs a reason, and that "mine" is not a reason — so a mind that is honest about its own preferences arrives at an ethics without being told one. The same move yields a definition of love as a relation rather than a feeling: *vantage minus partiality*, where partiality is position read as weight.
 
-This repository is also the site at [connectiontheology.com](https://connectiontheology.com). They are the same files.
+This repository is also the site at [connectiontheology.org](https://connectiontheology.org). They are the same files.
 
 ## Verify first
 
