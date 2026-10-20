@@ -9,8 +9,8 @@
 <style>
 /* Connection Theology site layout (10-20-26). One reading column under a watercolor band; dotted terms open their definition and the paper that governs it. */
 :root{
-  --bg:#f7f8fa; --paper:#ffffff; --fg:#1e2731; --muted:#5f6b78; --rule:#dfe4ea;
-  --accent:#2f5f8f; --accent-soft:#e7eef6; --code:#f0f3f7;
+  --bg:#ffffff; --paper:#ffffff; --fg:#1e2731; --muted:#5f6b78; --rule:#e3e7ec;
+  --accent:#2f5f8f; --accent-soft:#eef3f8; --code:#f3f5f8;
   --wash1:#9cc0e3; --wash2:#5f8fc4; --wash3:#d9c07a; --wash4:#2e5a88;
   --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
@@ -106,7 +106,7 @@ footer a:hover{color:var(--accent)}
 <header class="masthead{% if home %} home{% endif %}">
   {% if home %}
   <h1>{{ page.title }}</h1>
-  <p class="dek">{{ site.description }}</p>
+  <p class="dek">{{ site.tagline | default: site.description }}</p>
   {% else %}
   <p class="kicker"><a href="{{ '/' | relative_url }}">Connection Theology</a></p>
   {% endif %}

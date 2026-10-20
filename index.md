@@ -2,7 +2,7 @@
 title: "Connection Theology"
 ---
 
-Consider the context in which everything you can think of exists, including you, thinking it.
+Consider the context in which everything that is, exists: every force, every happening, every thing, and you, considering it.
 
 The context doesn't need a label, but we can provisionally call it totality.
 
@@ -10,7 +10,7 @@ We can be certain, right here and now, that totality has no outside. Test it: tr
 
 Now see what follows from that one feature. Nothing is beyond. Nothing came before. Nothing is elsewhere. Nothing is left out. Everything is in context, and so are you.
 
-A unicorn is in, as an idea and a word and a child's wanting, and not as an animal, because there isn't one. Your thoughts are in, and so are the neurons that carry them, and so is the open question of how the two are related. The dead are in, in whichever way the past is in. Justice is in, as a fact about what depends on what. The feeling you may have, reading this, of standing somewhere and looking in — that is in too, as a feeling. It is not a location.
+The laws of the universe are in: gravity, time, space, the fields, every process they run. The past is in, and so is the future, in whichever way each of them is. Your thoughts are in, and so are the cells that carry them, and so is the open question of how the two are related. The feeling you may have, reading this, of standing somewhere and looking in — that is in too, as a feeling. It is not a location.
 
 The derived characteristics of the context we provisionally called totality suggest an old name.
 
