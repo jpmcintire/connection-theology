@@ -11,3 +11,9 @@ exclude:
 include:
   - lean/CT.lean
   - lean/lean-toolchain
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
