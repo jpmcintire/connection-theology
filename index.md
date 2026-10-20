@@ -42,4 +42,4 @@ That any particular mind performs the asking. Consciousness. That anything answe
 
 ---
 
-*Connection Theology is the work of John McIntire, written in conversation with an AI referred to in its record as Verity. Which sentences are whose is recorded at the back of every paper.*
+*Connection Theology is the work of John McIntire, written in conversation with OpenAI and Anthropic models. Which sentences are whose is recorded at the back of every paper.*
