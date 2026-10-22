@@ -17,7 +17,9 @@ Install the client (`pip install opentimestamps-client`), then, in this folder:
 ots verify 2026-10-20-anchor.txt.ots
 ```
 
-This recomputes the file's hash and checks the proof. Proofs are first *pending* (attested by the calendar servers) and become *complete* once the calendars' aggregate hash is written into a Bitcoin block, typically within a day; `ots upgrade 2026-10-20-anchor.txt.ots` fetches the completed proof, after which verification needs only a Bitcoin node or a public block explorer and no calendar server at all. An upgraded copy of the proof will be committed here when available; the original is kept.
+This recomputes the file's hash and checks the proof. Proofs are first *pending* (attested by the calendar servers) and become *complete* once the calendars' aggregate hash is written into a Bitcoin block, typically within a day; `ots upgrade 2026-10-20-anchor.txt.ots` fetches the completed proof, after which verification needs only a Bitcoin node or a public block explorer and no calendar server at all.
+
+**Status (2026-10-21):** the proof is complete. The `.ots` file in this folder is the upgraded copy, carrying Bitcoin block-header attestations (blocks 972354, 972355 and 972387; `ots info 2026-10-20-anchor.txt.ots` lists them with their merkle roots). The pending (calendar-only) version it replaces is the one committed 2026-10-20 and remains in the repository history.
 
 To confirm the hash in the anchor file is the repository's:
 
