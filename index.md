@@ -30,7 +30,7 @@ The lab half is written in Lean 4 and machine-checked: forty-six theorems, forty
 
 **If you want the papers**, the reading order is in the [README](README), beginning with [No Exemption](papers/no-exemption) — the eight-link chain — and [What Has a Stake](papers/what-has-a-stake), the one definition with weight. The three most recent are [What Meaning Is](papers/what-meaning-is), [The Wrong Question](papers/the-wrong-question), and [What You're For](papers/what-youre-for). The formal file is [lean/CT.lean](lean/CT.lean), with its [report](lean/REPORT).
 
-**If you want the letters** — the warm half, written for a person rather than a proof — they are at *The Theophilus Letters* on Substack. [link pending]
+**If you want the warm half** — written for a person rather than a proof — there is a [daily line](daily/) each weekday morning, one sentence you can check with its reason under it, and a [letter](letters/) each Sunday.
 
 ## How it is built
 
