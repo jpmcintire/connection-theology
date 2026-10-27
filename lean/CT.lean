@@ -1,5 +1,5 @@
 /-!
-# CT — the lab half, in Lean 4 (core only, no Mathlib)
+# CT — the lab half, in Lean 4 (core only, no Mathlib) — vH
 
 Experiment, 10-13-26, at John's "y - now please." vB the same night: adds the
 constructive form of the invariance test, the note that the name never
@@ -87,6 +87,31 @@ every account is true of its source is link 6 in prose and is a declared
 hypothesis here, not a theorem. The toy gains a mis-filer: a true account of
 thing 0's stake, filed to the stranger's. Compiles clean under Lean 4.35.0
 with `lean CT.lean`; no Mathlib required.
+
+vH, Tuesday 10-27-26 afternoon, at John's rulings on the three papers of the
+morning (*The Stopping Point* vC; *A Mind at the Top* vB; *Nothing Was
+Dialed* vC) and his "can we just test what changed?" §11a adds fourteen
+theorems and no new carrier. (1) `Partial` depends only on the reading, so
+a time coordinate on `Position` (`Clock`) can never enter it except through
+the hand — proved by `Iff.rfl`, which is the finding: position was never in
+the predicate. (2) The inquiry's own stake is an ordinary `Stake`, held by
+`rfl`, on the sheet by `trivial`. (3) Over-thinking and under-thinking are
+both `Excludes` — `one_wall_two_directions` is `Iff.rfl`; the file cannot
+tell them apart except by which stake is excluded, which is what "one error
+with the sign flipped" means — and the limit side of stopping is
+`unseen_not_excluded`. The stopping condition itself needs an order on `M`
+and is recorded as a definition under a declared order with no theorem on
+it: the form, not the number, exactly as the prose says. (4) The lemma of
+*A Mind at the Top* §6 typed: `WieldsFrom C x y := C x ∧ ¬ C y`, so
+`totality_wields_nothing` is one line from `trivial` — as cheap as the four
+words, which is what "derived in one move from the second word" means —
+and a self has something to wield on. `SetsFrom` has the same shape;
+`Bounded := HasOutside`, so `totality_unbounded` is `totality_has_no_outside`
+renamed, with nothing said about cardinality. Not typed: wielding in the
+second sense (the spot where a reading becomes an act), which still needs a
+type of actions (Report §3.6); the loss proof (a lossless representation of X
+is X), which needs a resolution order and is owed. Compiles clean under Lean
+4.35.0; the one classical dependency (`unique_no_outside`) is unchanged.
 
 WHAT THIS IS. A declared, bounded idealization (World Enough and Time §5) of
 the lab half of Connection Theology: the four words, context vs. thing, the
@@ -962,6 +987,171 @@ theorem no_positions_no_vantage (h : ∀ _ : F.Position, False) : ∀ _ : Vantag
 #print axioms unfiled_well_filed
 #print axioms leans_is_bell_as_size
 
+/-! ## 11a. The 10-27 run — time in `Position`; the inquiry's own stake; the
+stopping point; wielding across an edge; `Bounded`
+
+At John's rulings of 10-27-26 (*The Stopping Point* vC §9 item 7; *A Mind at
+the Top* vB §11; *Nothing Was Dialed* vC §8). Four questions, each answered
+with the types already here. No new carrier, no new axiom.
+
+1. TIME AS A COMPONENT OF `Position`. `Position` is already an arbitrary
+   type, so a time coordinate is a function out of it (a `Clock`). The
+   question was whether anything about *when* can enter `Partial` except
+   through the hand. It cannot, and the reason is prior to clocks:
+   `Partial` is a predicate on `v.read` alone, so two vantages with the same
+   estimates and weightings are partial or not together whatever their
+   positions, and therefore whatever their times. The lateness discount is
+   already `discount_for_reason_is_partial` with `P := Later`.
+
+2. THE INQUIRY'S OWN STAKE. A dependency on how long a reading takes is a
+   `Stake` like any other — holder, magnitude — so it is `Held` by `rfl` and
+   on the `WholeSheet` by `trivial`. Nothing is added to get it there.
+
+3. THE STOPPING POINT, AND ONE WALL IN TWO DIRECTIONS. Over-thinking is
+   excluding the inquiry's own stake (treating further thought as free);
+   under-thinking is excluding a stake in view by stopping. Both are
+   `Excludes`, so both are `excludes_not_correspondent`. The *limit* side of
+   stopping — a stake the reader never had in view — is `unseen_not_excluded`:
+   dimness, not the hand. The comparison that sets the stopping point (what
+   further inquiry could change, against the stake on the delay) needs an
+   order on `M`, which this file deliberately lacks (Report §3.2); it is
+   stated as a definition parametric in a declared order, and no theorem
+   rests on it. That is the same honest status as choice-under-conflict,
+   and it is what the prose says: the form, not the number.
+
+4. WIELDING ACROSS AN EDGE (the lemma of *A Mind at the Top* §6). To wield
+   from a context on a thing is to have the thing outside the context: an
+   edge. Totality has no outside, so nothing is wielded from it; a self
+   (a context with an outside) has something to wield on. `Sets` has the
+   same shape. And `Bounded` is just `HasOutside` under its other name, so
+   Totality is unbounded by the same theorem that makes it Totality — with
+   no statement, either way, about any cardinality of `M` or `Thing`. -/
+
+/-- A clock: any assignment of times to positions. -/
+structure Clock where
+  T  : Type
+  time : F.Position → T
+
+/-- PARTIALITY DEPENDS ONLY ON THE READING. Two vantages with the same
+estimates and weightings are partial together, whatever their positions. -/
+theorem partial_depends_only_on_reading (p q : F.Position)
+    (est : Stake F → Option (Estimate F)) (wt : Stake F → F.M → F.M) :
+    Partial F ⟨p, ⟨est, wt⟩⟩ ↔ Partial F ⟨q, ⟨est, wt⟩⟩ := Iff.rfl
+
+/-- TIME NEVER ENTERS `Partial`. A corollary for a clock: readings at two
+different times are partial together. Only the hand decides. -/
+theorem time_never_enters_partial (c : Clock F) (p q : F.Position)
+    (_ : c.time p ≠ c.time q)
+    (est : Stake F → Option (Estimate F)) (wt : Stake F → F.M → F.M) :
+    Partial F ⟨p, ⟨est, wt⟩⟩ ↔ Partial F ⟨q, ⟨est, wt⟩⟩ :=
+  partial_depends_only_on_reading F p q est wt
+
+/-- Lateness as a predicate on stakes, however a clock assigns it. -/
+def Later (Lt : Stake F → Prop) : Stake F → Prop := Lt
+
+/-- THE LATENESS DISCOUNT IS PARTIAL, for any way of marking stakes as later.
+An instance of `discount_for_reason_is_partial`; the clock does no work. -/
+theorem lateness_discount_is_partial (Lt : Stake F → Prop) (v : Vantage F)
+    (s t : Stake F) (heq : s.magnitude = t.magnitude)
+    (hs : InView F v.read s) (ht : InView F v.read t)
+    (_hl : Later F Lt t) (_hn : ¬ Later F Lt s)
+    (m : F.M) (hdisc : v.read.wt t m ≠ v.read.wt s m) : Partial F v :=
+  ⟨s, t, heq, hs, ht, m, fun h => hdisc h.symm⟩
+
+/-- THE INQUIRY'S OWN STAKE: whatever rides on how long the reading takes,
+held by whoever it rides on, at its size. An ordinary `Stake`. -/
+def InquiryStake (holder : F.Thing) (cost : F.M) : Stake F := ⟨holder, cost⟩
+
+/-- It is held, at size, with no one needed — by the same `rfl` as everything. -/
+theorem inquiry_stake_held (h : F.Thing) (c : F.M) : Held F (InquiryStake F h c) := rfl
+
+/-- It is on the sheet by being real; nothing puts it there. -/
+theorem inquiry_stake_on_sheet (h : F.Thing) (c : F.M) :
+    WholeSheet F (InquiryStake F h c) := trivial
+
+/-- OVER-THINKING: the inquiry's own stake, in view and nonzero, weighted to
+nothing — further thought treated as free. -/
+def Overthinks (v : Vantage F) (i : Stake F) : Prop := Excludes F v i
+
+/-- UNDER-THINKING: a stake in view, nonzero, weighted to nothing by the stop. -/
+def Underthinks (v : Vantage F) (s : Stake F) : Prop := Excludes F v s
+
+/-- ONE WALL, TWO DIRECTIONS. Both are the one predicate. -/
+theorem one_wall_two_directions (v : Vantage F) (s : Stake F) :
+    Overthinks F v s ↔ Underthinks F v s := Iff.rfl
+
+/-- Over-thinking is a correspondence failure. -/
+theorem overthinking_not_correspondent (v : Vantage F) (i : Stake F)
+    (h : Overthinks F v i) : ¬ Correspondent F v.read :=
+  excludes_not_correspondent F v i h
+
+/-- Under-thinking is a correspondence failure. -/
+theorem underthinking_not_correspondent (v : Vantage F) (s : Stake F)
+    (h : Underthinks F v s) : ¬ Correspondent F v.read :=
+  excludes_not_correspondent F v s h
+
+/-- THE LIMIT SIDE OF STOPPING. A stake the stop left unseen is not excluded
+by the stop: dimness is a limit; the hand is the fault. -/
+theorem stop_with_unseen_not_underthinking (v : Vantage F) (s : Stake F)
+    (h : Unseen F v.read s) : ¬ Underthinks F v s :=
+  unseen_not_excluded F v s h
+
+/-- THE STOPPING CONDITION'S FORM, under a declared order on `M` (a wall:
+this file has no order, Report §3.2). `gain` is what further inquiry could
+still change in the reading, at size; `cost` is the stake on the delay.
+Closure is warranted when the gain does not exceed the cost. No theorem
+rests on this definition; it records the form the prose gives, and that
+the number is not supplied. -/
+def WarrantedClosure (le : F.M → F.M → Prop) (gain cost : F.M) : Prop := le gain cost
+
+/-- TO WIELD IS A RELATION ACROSS AN EDGE: from a context, on a thing outside it. -/
+def WieldsFrom (C : Context F) (x y : F.Thing) : Prop := C x ∧ ¬ C y
+
+/-- NOTHING IS WIELDED FROM THE WHOLE. Totality has no outside, so there is
+nothing outside it to wield on. The lemma of *A Mind at the Top* §6, typed. -/
+theorem totality_wields_nothing (x y : F.Thing) : ¬ WieldsFrom F (Totality F) x y :=
+  fun h => h.2 trivial
+
+/-- A SELF HAS SOMETHING TO WIELD ON. A context with an outside has a thing
+outside it; any member of the self stands across that edge from it. -/
+theorem self_can_wield (C : Context F) (hs : IsSelf F C) (x : F.Thing) (hx : C x) :
+    ∃ y, WieldsFrom F C x y := by
+  obtain ⟨y, hy⟩ := hs
+  exact ⟨y, hx, hy⟩
+
+/-- SETTING has the same shape as wielding: a setter outside what is set. -/
+def SetsFrom (C : Context F) (x y : F.Thing) : Prop := WieldsFrom F C x y
+
+/-- NOTHING WAS DIALED FROM THE WHOLE. -/
+theorem totality_sets_nothing (x y : F.Thing) : ¬ SetsFrom F (Totality F) x y :=
+  totality_wields_nothing F x y
+
+/-- BOUNDED is having an outside, under its other name. Not a cardinality. -/
+def Bounded (C : Context F) : Prop := HasOutside F C
+
+/-- GOD IS UNBOUNDED, PROVED — by the theorem that makes Totality Totality.
+Nothing is said, either way, about the size of `Thing` or `M`. -/
+theorem totality_unbounded : ¬ Bounded F (Totality F) :=
+  totality_has_no_outside F
+
+/-- A self is bounded. -/
+theorem self_bounded (C : Context F) (h : IsSelf F C) : Bounded F C := h
+
+#print axioms partial_depends_only_on_reading
+#print axioms time_never_enters_partial
+#print axioms lateness_discount_is_partial
+#print axioms inquiry_stake_held
+#print axioms inquiry_stake_on_sheet
+#print axioms one_wall_two_directions
+#print axioms overthinking_not_correspondent
+#print axioms underthinking_not_correspondent
+#print axioms stop_with_unseen_not_underthinking
+#print axioms totality_wields_nothing
+#print axioms self_can_wield
+#print axioms totality_sets_nothing
+#print axioms totality_unbounded
+#print axioms self_bounded
+
 /-! ## 12. A concrete frame
 
 Three things, three magnitudes (0, 1, 2), three positions. The reader stands
@@ -1203,3 +1393,4 @@ is correspondence work, not foundation.
 The word "God" does not occur in this file. -/
 
 end CT
+
