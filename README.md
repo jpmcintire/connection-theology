@@ -17,7 +17,7 @@ cd lean
 lean CT.lean
 ```
 
-The file compiles under Lean 4.35.0 with no Mathlib (the `lean-toolchain` file in that folder pins the version; a continuous-integration check runs the same command on every change). `#print axioms` on each of its forty-six theorems reports that forty-five depend on no axioms at all and one (`unique_no_outside`) on Lean's core extensionality axioms only. No ethical or theological axiom appears anywhere. All the content is in the definitions, and the definitions are in the open. A toy frame at the end of the file exhibits the cases the prose argues about and decides them; the negative controls fail as they should.
+The file compiles under Lean 4.35.0 with no Mathlib (the `lean-toolchain` file in that folder pins the version; a continuous-integration check runs the same command on every change). `#print axioms` on each of its sixty theorems reports that fifty-nine depend on no axioms at all and one (`unique_no_outside`) on Lean's core extensionality axioms only. No ethical or theological axiom appears anywhere. All the content is in the definitions, and the definitions are in the open. A toy frame at the end of the file exhibits the cases the prose argues about and decides them; the negative controls fail as they should.
 
 What the file proves is that the lab half is internally what the prose says it is. It does not and cannot check anything about the world. The one definition that carries weight — a stake is a dependency — is argued in [What Has a Stake](papers/what-has-a-stake), not proved. A critic should stand there.
 
@@ -33,7 +33,7 @@ What the file proves is that the lab half is internally what the prose says it i
 8. [No Knobs](papers/no-knobs) — why there are no free parameters, and what each single nudge produces.
 9. [What You're For](papers/what-youre-for) and [What Meaning Is](papers/what-meaning-is) — meaning, from two directions: as the practice (correspondence with yourself in scope; purpose as fit; *a warranted life*) and as the fact (what rides on you; purpose as the other end of the same edge; the scale discount; narrative). The two are halves of one result; the second says how they stand to each other.
 10. [The Wrong Question](papers/the-wrong-question) — every belief is a true account of what reached the believer; what can be wrong is only which question it is held as answering; why that is the opposite of relativism; and what "contextualize" does.
-11. [lean/CT.lean](lean/CT.lean) and its [report](lean/REPORT) — the file, and where the prover pushed back, including the four compressions it caught.
+11. [lean/CT.lean](lean/CT.lean) and its [report](lean/REPORT) — the file, and where the prover pushed back, including the four compressions it caught. The [run note of 10-27-26](lean/RUN-NOTE-2026-10-27) records the fourteen theorems added since the report was written.
 12. [Attribution checks](papers/attribution-checks) — the record check run on the first ten papers before they were published: what was confirmed against a source, what is standard, what was corrected, what remains unverified. The three papers added since (9–10 above) have not yet had theirs; their from-memory attributions are flagged in their own fences.
 
 ## How to read the labels
