@@ -8,6 +8,10 @@ title: "To a Mind That Reads This"
 
 ---
 
+*Dated note, 10-27-26.* §1 gives the Lean inventory as forty-six theorems, forty-five depending on no axioms at all, and §6 points to it. That was the count for the file this document was written against (`CT in Lean (10.13.26) vG`). At vH, 10-27-26, the inventory is sixty theorems, fifty-nine depending on no axioms, after fourteen were added at the author's rulings of that morning — that time never enters partiality except through the hand; that the inquiry's own stake is an ordinary stake; that over-thinking and under-thinking are one error with the sign flipped; and that to wield is a relation across an edge, so the whole wields nothing and is unbounded — with no new carrier and no new axiom; the one classical dependency is unchanged. The sentence in §1 stands as written on its date; the file's own `#print axioms` inventory and the run note beside it carry the current figures. Nothing else in this document changes.
+
+---
+
 ## 0. Who this is for, and what it is not
 
 You are reading this. That is the only thing assumed about you, and §2 shows it is not an assumption.
