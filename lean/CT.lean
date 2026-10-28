@@ -1,5 +1,5 @@
 /-!
-# CT — the lab half, in Lean 4 (core only, no Mathlib) — vH
+# CT — the lab half, in Lean 4 (core only, no Mathlib) — vI
 
 Experiment, 10-13-26, at John's "y - now please." vB the same night: adds the
 constructive form of the invariance test, the note that the name never
@@ -113,6 +113,34 @@ type of actions (Report §3.6); the loss proof (a lossless representation of X
 is X), which needs a resolution order and is owed. Compiles clean under Lean
 4.35.0; the one classical dependency (`unique_no_outside`) is unchanged.
 
+vI, Tuesday 10-27-26 night, at an outside reader's counterexample (checked
+in Lean before anything changed) and John's two rulings. The case: a reader
+sharp everywhere, hand open on every stake of one size and zeroing every
+stake of another. vD's `Partial` was asymmetry across EQUAL sizes, so this
+reader was not partial — and was `Loving` — while excluding a whole class of
+stakes it saw at size. John: "zero no one isn't right and never was. it's...
+correspondence. that's all it is... ever." The weighting is a size claim
+(link 5), so the only hand with no reason but size is the one that reports
+the size; any other hand, uniform or not, is partiality. And on what the hand
+is tested against: "how could a stake 'turn out to be' different from the
+reader's appraisal?" — the hand is tested on the sizes the estimate admits,
+not on sizes this reader is not holding. So: `OpenHandAt` is identity on
+admitted sizes; `PartialAt` is the closed hand on a stake in view; `Partial`
+is the hand not open somewhere in view; `Loving` is a vantage with the hand
+open on everything in view (the subtraction stated positively, so that
+every theorem about love is constructive). The equal-sizes form, the two discounts,
+leaning, "mine only" and exclusion are all sufficient tests for partiality
+now (theorems), not its definition; a uniform discount is partial
+(`uniform_discount_is_partial`), which vD could not say; exclusion with an
+honest estimate is partiality (`excludes_is_partial`) — "zero no one" was its
+loudest instance, never a separate rule. `LimitOnly` is restated with the
+open hand. The toy gains Z, the size-class excluder: vantage, honest,
+excludes, partial, not loving; and the old equal-sizes mirror run on Z finds
+nothing. One theorem is classical and says so: `not_partial_loving`
+(¬¬open ⇒ open). The dimness side is untouched: an unseen stake admits
+nothing, so the hand is vacuously open there; the grandmother and the
+bacterium are loving as before. Compiles clean under Lean 4.35.0.
+
 WHAT THIS IS. A declared, bounded idealization (World Enough and Time §5) of
 the lab half of Connection Theology: the four words, context vs. thing, the
 two hinges, stake and sheet, estimate and weighting, partiality, the love
@@ -129,7 +157,7 @@ THE COMPRESSION RISK, declared. Every `def` and `structure` below is a choice
 a type theory forced. Each is a place where a wall could be built and called
 CT. The inventory (`#print axioms`) says exactly where content enters. Read
 the definitions as the sheet; if one of them is not what CT means, that is the
-finding. vA, vB, vC and vD have each found one.
+finding. vA, vB, vC and vD have each found one; vI found one by being read.
 
 DESIGN. Nothing is assumed about the world. The carriers (things, magnitudes,
 positions) are parameters of a `Frame`, so the whole development is
@@ -270,9 +298,15 @@ def Honest {p : F.Position} (r : Reading F p) : Prop := ∀ s, HonestAt F r s
 def SharpAt {p : F.Position} (r : Reading F p) (s : Stake F) (m : F.M) : Prop :=
   ∃ E : Estimate F, r.est s = some E ∧ ∀ x, E x = true ↔ x = m
 
-/-- The hand is open at a stake: the weighting is the identity there. -/
+/-- The hand is open at a stake: the weighting is the identity on every size
+    the estimate admits for it. vI (10-27 night, ruled): the hand is tested on
+    what the reader actually considers — John: "how could a stake 'turn out to
+    be' different from the reader's appraisal?" A size the estimate does not
+    admit is a size this reader is not holding; what the hand "would do" with
+    it is a question about a different reading. On an unseen stake the
+    condition is vacuous: nothing is admitted, so nothing is weighed. -/
 def OpenHandAt {p : F.Position} (r : Reading F p) (s : Stake F) : Prop :=
-  ∀ m, r.wt s m = m
+  ∀ m, Admits F r s m → r.wt s m = m
 
 /-- The hand is open everywhere. -/
 def OpenHand {p : F.Position} (r : Reading F p) : Prop := ∀ s, OpenHandAt F r s
@@ -375,48 +409,78 @@ theorem dishonest_is_misfiled [DecidableEq (Stake F)] {p : F.Position} (f : Fili
 /-! ## 3. Partiality
 
 Partiality is position read as weight: favoring any stake for a reason other
-than its size (ruled 10-13 night). In vD this is a fact about the WEIGHTING
-alone: two stakes of equal magnitude, both in view, whose candidate sizes the
-reader treats differently. The estimate does not enter. A reader who sees one
-stake sharply and an equal one dimly, honestly, is not partial; a reader who
-sees nothing of a stake is not partial toward it. Those were the two things
-vC could not say. -/
+than its size (ruled 10-13 night). vD typed it as a fact about the WEIGHTING
+alone — two stakes of equal magnitude, both in view, treated differently —
+and that was a compression: it caught unequal treatment of equals and missed
+a hand that misreports every size the same way. An outside reader's case
+(10-27 night, checked in Lean): zero every stake of one size, keep every
+other; symmetric across equals, so not `Partial`, yet excluding a whole
+class of acknowledged stakes — and `Loving`. John's ruling: "zero no one
+isn't right and never was. it's... correspondence. that's all it is... ever."
+The weighting is a size claim (link 5); the only hand with no reason but
+size is the one that reports the size. So vI: PARTIALITY IS THE HAND NOT
+OPEN SOMEWHERE IN VIEW — any failure of the weighting to report an admitted
+size, uniform or not. The equal-sizes test, the discounts, leaning, and
+exclusion are sufficient tests for it (theorems below), no longer its
+definition. The estimate still does not enter: a reader who sees one stake
+sharply and an equal one dimly, honestly, is not partial; a reader who sees
+nothing of a stake is not partial toward it. -/
 
-def Partial (v : Vantage F) : Prop :=
-  ∃ s t : Stake F,
-    s.magnitude = t.magnitude ∧
-    InView F v.read s ∧ InView F v.read t ∧
-    ∃ m : F.M, v.read.wt s m ≠ v.read.wt t m
-
-/-- Partiality at a particular stake: some equal stake in view is weighted
-    differently from it. -/
+/-- Partial at a stake: in view, and the hand not open there. -/
 def PartialAt (v : Vantage F) (s : Stake F) : Prop :=
-  InView F v.read s ∧
-  ∃ t : Stake F, t.magnitude = s.magnitude ∧ InView F v.read t ∧
-    ∃ m : F.M, v.read.wt s m ≠ v.read.wt t m
+  InView F v.read s ∧ ¬ OpenHandAt F v.read s
 
-theorem partial_at_is_partial (v : Vantage F) (s : Stake F) (h : PartialAt F v s) : Partial F v := by
-  obtain ⟨hs, t, hm, ht, m, hne⟩ := h
-  exact ⟨s, t, hm.symm, hs, ht, m, hne⟩
+/-- Partial: the hand is not open on everything in view. Stated as the
+    negation of the open hand so that every sufficient test below is
+    constructive; `PartialAt` is its witnessed form. -/
+def Partial (v : Vantage F) : Prop := ¬ OpenHand F v.read
 
-/-- The vC form — my own stake vs. another's — is a special case. -/
+theorem partial_at_is_partial (v : Vantage F) (s : Stake F) (h : PartialAt F v s) : Partial F v :=
+  fun ho => h.2 (ho s)
+
+/-- A closed hand on one admitted size is partiality: the witness form. -/
+theorem closed_hand_is_partial (v : Vantage F) (s : Stake F) (m : F.M)
+    (hsv : InView F v.read s) (hadm : Admits F v.read s m) (hne : v.read.wt s m ≠ m) :
+    Partial F v :=
+  partial_at_is_partial F v s ⟨hsv, fun ho => hne (ho m hadm)⟩
+
+/-- THE OLD DEFINITION IS NOW A TEST. Two equal stakes in view, a size both
+    estimates admit, weighted differently: partial. Sufficient, not
+    equivalent — a uniform discount passes this test and is partial. -/
+theorem equal_sizes_partial (v : Vantage F) (s t : Stake F)
+    (_hm : s.magnitude = t.magnitude)
+    (hsv : InView F v.read s) (htv : InView F v.read t)
+    (m : F.M) (hs : Admits F v.read s m) (ht : Admits F v.read t m)
+    (hne : v.read.wt s m ≠ v.read.wt t m) : Partial F v := by
+  intro ho
+  apply hne
+  rw [ho s m hs, ho t m ht]
+
+/-- A UNIFORM DISCOUNT IS PARTIAL. A hand that applies the same distortion to
+    every stake misreports every size; doing it to everyone does not make it
+    faithful. Any one in-view stake, at any admitted size, witnesses it. -/
+theorem uniform_discount_is_partial (v : Vantage F)
+    (f : F.M → F.M) (hf : ∀ s m, v.read.wt s m = f m)
+    (s : Stake F) (m : F.M) (hsv : InView F v.read s) (hadm : Admits F v.read s m)
+    (hne : f m ≠ m) : Partial F v :=
+  closed_hand_is_partial F v s m hsv hadm (by rw [hf]; exact hne)
+
+/-- The vC form — my own stake vs. another's — is a special case (a test). -/
 def PartialTowardSelf (v : Vantage F) : Prop :=
   ∃ s t : Stake F,
     s.magnitude = t.magnitude ∧
     s.holder = F.self v.pos ∧ t.holder ≠ F.self v.pos ∧
     InView F v.read s ∧ InView F v.read t ∧
-    ∃ m : F.M, v.read.wt s m ≠ v.read.wt t m
+    ∃ m : F.M, Admits F v.read s m ∧ Admits F v.read t m ∧ v.read.wt s m ≠ v.read.wt t m
 
 theorem partial_toward_self_is_partial (v : Vantage F) (h : PartialTowardSelf F v) : Partial F v := by
-  obtain ⟨s, t, hm, _, _, hs, ht, m, hne⟩ := h
-  exact ⟨s, t, hm, hs, ht, m, hne⟩
+  obtain ⟨s, t, hm, _, _, hs, ht, m, has, hat, hne⟩ := h
+  exact equal_sizes_partial F v s t hm hs ht m has hat hne
 
 /-- An open hand is never partial. Partiality is in the weighting and
     nowhere else. -/
-theorem open_hand_not_partial (v : Vantage F) (h : OpenHand F v.read) : ¬ Partial F v := by
-  intro ⟨s, t, _, _, _, m, hne⟩
-  apply hne
-  rw [h s m, h t m]
+theorem open_hand_not_partial (v : Vantage F) (h : OpenHand F v.read) : ¬ Partial F v :=
+  fun hp => hp h
 
 /-- Partiality is a correspondence failure (full correspondence has an open hand). -/
 theorem partial_not_correspondent (v : Vantage F) (h : Partial F v) :
@@ -457,25 +521,23 @@ theorem uncertainty_not_partial (v : Vantage F) (s t : Stake F)
     (_hs : SharpAt F v.read s s.magnitude)
     (_ht : HonestAt F v.read t) (_htv : InView F v.read t)
     (ho : OpenHand F v.read) :
-    ¬ PartialAt F v s ∧ ¬ PartialAt F v t := by
+    ¬ PartialAt F v s ∧ ¬ PartialAt F v t :=
   -- The estimates (sharp on s, merely honest and wide on t) do not enter the
   -- proof at all: that is the point. Partiality is a fact about the hand.
-  have hp : ¬ Partial F v := open_hand_not_partial F v ho
-  constructor
-  · intro h; exact hp (partial_at_is_partial F v s h)
-  · intro h; exact hp (partial_at_is_partial F v t h)
+  ⟨fun h => h.2 (ho s), fun h => h.2 (ho t)⟩
 
 /-- A discount for lateness is partiality. Two equal stakes in view; the
     hand open on one and closed on the other at some size: partial. -/
 theorem discount_is_partial (v : Vantage F) (s t : Stake F)
-    (hm : s.magnitude = t.magnitude)
-    (hsv : InView F v.read s) (htv : InView F v.read t)
-    (hs : OpenHandAt F v.read s)
-    (m : F.M) (hdisc : v.read.wt t m ≠ m) :
-    Partial F v := by
-  refine ⟨s, t, hm, hsv, htv, m, ?_⟩
-  rw [hs m]
-  exact fun h => hdisc h.symm
+    (_hm : s.magnitude = t.magnitude)
+    (_hsv : InView F v.read s) (htv : InView F v.read t)
+    (_hs : OpenHandAt F v.read s)
+    (m : F.M) (hadm : Admits F v.read t m) (hdisc : v.read.wt t m ≠ m) :
+    Partial F v :=
+  -- vI: the open hand on `s` no longer does any work; the closed hand on `t`
+  -- is partiality by itself. Kept in the statement so the discount keeps its
+  -- shape — one stake read at size, the other not.
+  closed_hand_is_partial F v t m htv hadm hdisc
 
 /-! ### 3c. The index never enters (What Meaning Is §3; vF)
 
@@ -492,9 +554,9 @@ theorem discount_for_reason_is_partial (P : Stake F → Prop) (v : Vantage F) (s
     (hm : s.magnitude = t.magnitude)
     (hsv : InView F v.read s) (htv : InView F v.read t)
     (hs : OpenHandAt F v.read s)
-    (m : F.M) (hdisc : v.read.wt t m ≠ m) :
+    (m : F.M) (hadm : Admits F v.read t m) (hdisc : v.read.wt t m ≠ m) :
     Partial F v :=
-  discount_is_partial F v s t hm hsv htv hs m hdisc
+  discount_is_partial F v s t hm hsv htv hs m hadm hdisc
 
 /-- The scale discount. `Far` is whatever frame the reader holds a stake
     against — the cosmos, the century, the crowd. Reading the far stake lower
@@ -504,30 +566,43 @@ theorem discount_by_scale_is_partial (Far : Stake F → Prop) (v : Vantage F) (s
     (hm : s.magnitude = t.magnitude)
     (hsv : InView F v.read s) (htv : InView F v.read t)
     (hs : OpenHandAt F v.read s)
-    (m : F.M) (hdisc : v.read.wt t m ≠ m) :
+    (m : F.M) (hadm : Admits F v.read t m) (hdisc : v.read.wt t m ≠ m) :
     Partial F v :=
-  discount_for_reason_is_partial F Far v s t hnear hfar hm hsv htv hs m hdisc
+  discount_for_reason_is_partial F Far v s t hnear hfar hm hsv htv hs m hadm hdisc
 
 /-! ## 4. Love
 
 love = vantage − partiality. A vantage is loving when it is a vantage (it
 sees at least one real stake truly) and its hand is open across everything
-it sees — whatever its reach, whatever its sharpness. Perfect love is the
-limit: loving and fully correspondent. Nothing here mentions feeling. -/
+it sees — whatever its reach, whatever its sharpness. vI states the
+subtraction positively, as the open hand, so that every theorem about love
+is constructive; `loving_not_partial` is the subtraction, and its converse
+(`not_partial_loving`) is the one place the file needs classical logic,
+flagged there. Perfect love is the limit: loving and fully correspondent.
+Nothing here mentions feeling. -/
 
-def Loving (v : Vantage F) : Prop := IsVantage F v ∧ ¬ Partial F v
+def Loving (v : Vantage F) : Prop := IsVantage F v ∧ OpenHand F v.read
 
 def PerfectLove (v : Vantage F) : Prop := Loving F v ∧ Correspondent F v.read
 
 theorem correspondent_loving (v : Vantage F) (h : Correspondent F v.read)
     (hs : ∃ s : Stake F, s.magnitude ≠ F.zero) : Loving F v :=
-  ⟨correspondent_is_vantage F v h hs, fun hp => partial_not_correspondent F v hp h⟩
+  ⟨correspondent_is_vantage F v h hs, h.2⟩
 
 theorem correspondent_perfect (v : Vantage F) (h : Correspondent F v.read)
     (hs : ∃ s : Stake F, s.magnitude ≠ F.zero) : PerfectLove F v :=
   ⟨correspondent_loving F v h hs, h⟩
 
-theorem loving_not_partial (v : Vantage F) (h : Loving F v) : ¬ Partial F v := h.2
+theorem loving_not_partial (v : Vantage F) (h : Loving F v) : ¬ Partial F v :=
+  fun hp => hp h.2
+
+/-- The equation's other direction — a vantage that is not partial is
+    loving — needs ¬¬open ⇒ open, which is classical for an arbitrary `M`.
+    Stated with that dependency in the open (see the inventory); nothing
+    else in the file uses it. -/
+theorem not_partial_loving (v : Vantage F) (hv : IsVantage F v) (hp : ¬ Partial F v) :
+    Loving F v :=
+  ⟨hv, Classical.byContradiction hp⟩
 
 /-- THE GRANDMOTHER, THE BACTERIUM, THE CANDLE. A reader with an open hand
     that sees at least one real stake truly is loving — however few stakes it
@@ -535,24 +610,28 @@ theorem loving_not_partial (v : Vantage F) (h : Loving F v) : ¬ Partial F v := 
     appears in the hypotheses. Dimness is a limit; it is never the fault. -/
 theorem open_hand_loving (v : Vantage F) (hv : IsVantage F v) (ho : OpenHand F v.read) :
     Loving F v :=
-  ⟨hv, open_hand_not_partial F v ho⟩
+  ⟨hv, ho⟩  -- vI: definitional. It was the content all along.
 
 /-! ### 4a. Loving toward one
 
 The per-stake form the prose uses constantly ("this reader loves this one")
 and vC could not type. A vantage is loving toward `s` when it sees `s`
-truly — in view, honest, hand open there — and no equal stake in view is
-weighted differently from it. -/
+truly — in view, honest, hand open there. (vD also required "no equal stake
+weighted differently"; under vI that is the same condition.) -/
 
 def LovingToward (v : Vantage F) (s : Stake F) : Prop :=
-  InView F v.read s ∧ HonestAt F v.read s ∧ OpenHandAt F v.read s ∧ ¬ PartialAt F v s
+  InView F v.read s ∧ HonestAt F v.read s ∧ OpenHandAt F v.read s
 
-/-- A loving vantage is loving toward every stake it sees honestly with an
-    open hand. -/
+theorem loving_toward_not_partial_at (v : Vantage F) (s : Stake F) (h : LovingToward F v s) :
+    ¬ PartialAt F v s :=
+  fun hp => hp.2 h.2.2
+
+/-- A loving vantage is loving toward every stake it sees honestly. (vI: the
+    open hand there comes from love itself; vD had to assume it.) -/
 theorem loving_toward_of_loving (v : Vantage F) (h : Loving F v) (s : Stake F)
-    (hsv : InView F v.read s) (hh : HonestAt F v.read s) (ho : OpenHandAt F v.read s) :
+    (hsv : InView F v.read s) (hh : HonestAt F v.read s) :
     LovingToward F v s :=
-  ⟨hsv, hh, ho, fun hp => h.2 (partial_at_is_partial F v s hp)⟩
+  ⟨hsv, hh, h.2 s⟩
 
 /-- No one is loved by a reader who does not see them. (Held, yes — §10 —
     but not seen: the three senses of *The Candle* §6.) -/
@@ -614,7 +693,8 @@ theorem no_total_self : ¬ ∃ r : Reader F, r.selfCtx = Totality F := by
     toward excludes partiality at that stake. The bell may ring loudest for
     one's own; the hand can still be open there. -/
 theorem felt_not_partial (r : Reader F) (s : Stake F) (h : Felt F r s) :
-    ¬ PartialAt F r.v s := h.1.2.2.2
+    ¬ PartialAt F r.v s :=
+  loving_toward_not_partial_at F r.v s h.1
 
 /-- A reader's own stakes are constituents: when seen, they are felt. -/
 theorem own_seen_is_felt (r : Reader F) (s : Stake F)
@@ -638,11 +718,11 @@ def LeansToward (r : Reader F) : Prop :=
     s.magnitude = t.magnitude ∧
     r.selfCtx s.holder ∧ ¬ r.selfCtx t.holder ∧
     InView F r.v.read s ∧ InView F r.v.read t ∧
-    ∃ m : F.M, r.v.read.wt s m ≠ r.v.read.wt t m
+    ∃ m : F.M, Admits F r.v.read s m ∧ Admits F r.v.read t m ∧ r.v.read.wt s m ≠ r.v.read.wt t m
 
 theorem leans_is_partial (r : Reader F) (h : LeansToward F r) : Partial F r.v := by
-  obtain ⟨s, t, hm, _, _, hs, ht, m, hne⟩ := h
-  exact ⟨s, t, hm, hs, ht, m, hne⟩
+  obtain ⟨s, t, hm, _, _, hs, ht, m, has, hat, hne⟩ := h
+  exact equal_sizes_partial F r.v s t hm hs ht m has hat hne
 
 /-- THE BELL FILED AS SIZE (vG). `LeansToward` is the filing error in the hand.
     The bell — `r.selfCtx s.holder` — is a true account of constituency. Leaning is
@@ -653,14 +733,14 @@ def BellAsSize (r : Reader F) : Prop :=
   ∃ s t : Stake F, s.magnitude = t.magnitude ∧
     (r.selfCtx s.holder ∧ ¬ r.selfCtx t.holder) ∧
     InView F r.v.read s ∧ InView F r.v.read t ∧
-    ∃ m : F.M, r.v.read.wt s m ≠ r.v.read.wt t m
+    ∃ m : F.M, Admits F r.v.read s m ∧ Admits F r.v.read t m ∧ r.v.read.wt s m ≠ r.v.read.wt t m
 
 theorem leans_is_bell_as_size (r : Reader F) : LeansToward F r ↔ BellAsSize F r := by
   constructor
-  · intro ⟨s, t, hm, hs, ht, hsv, htv, m, hne⟩
-    exact ⟨s, t, hm, ⟨hs, ht⟩, hsv, htv, m, hne⟩
-  · intro ⟨s, t, hm, ⟨hs, ht⟩, hsv, htv, m, hne⟩
-    exact ⟨s, t, hm, hs, ht, hsv, htv, m, hne⟩
+  · intro ⟨s, t, hm, hs, ht, hsv, htv, m, has, hat, hne⟩
+    exact ⟨s, t, hm, ⟨hs, ht⟩, hsv, htv, m, has, hat, hne⟩
+  · intro ⟨s, t, hm, ⟨hs, ht⟩, hsv, htv, m, has, hat, hne⟩
+    exact ⟨s, t, hm, hs, ht, hsv, htv, m, has, hat, hne⟩
 
 /-- "Mine only" is leaning with the self shrunk to the one at the position:
     if the reader's self-context is exactly {self}, partiality toward self is
@@ -668,8 +748,8 @@ theorem leans_is_bell_as_size (r : Reader F) : LeansToward F r ↔ BellAsSize F 
 theorem partial_toward_self_is_leaning (r : Reader F)
     (hexact : ∀ x, r.selfCtx x ↔ x = F.self r.v.pos)
     (h : PartialTowardSelf F r.v) : LeansToward F r := by
-  obtain ⟨s, t, hm, hs_self, ht_self, hs, ht, m, hne⟩ := h
-  refine ⟨s, t, hm, (hexact _).2 hs_self, ?_, hs, ht, m, hne⟩
+  obtain ⟨s, t, hm, hs_self, ht_self, hs, ht, m, has, hat, hne⟩ := h
+  refine ⟨s, t, hm, (hexact _).2 hs_self, ?_, hs, ht, m, has, hat, hne⟩
   intro hc
   exact ht_self ((hexact _).1 hc)
 
@@ -716,9 +796,17 @@ theorem excludes_closes_hand (v : Vantage F) (s : Stake F) (h : Excludes F v s)
   intro ho
   obtain ⟨hnz, E, hE, hz⟩ := h
   apply hnz
+  have hadm : Admits F v.read s s.magnitude := ⟨E, hE, hh E hE⟩
   have := hz s.magnitude (hh E hE)
-  rw [ho] at this
+  rw [ho s.magnitude hadm] at this
   exact this
+
+/-- EXCLUSION IS PARTIALITY (vI). With an honest estimate, zeroing a real stake
+    in view is a closed hand, and a closed hand anywhere in view is partiality.
+    "Zero no one" was never a separate rule; it was the loudest instance. -/
+theorem excludes_is_partial (v : Vantage F) (s : Stake F) (h : Excludes F v s)
+    (hh : HonestAt F v.read s) : Partial F v :=
+  partial_at_is_partial F v s ⟨excludes_requires_view F v s h, excludes_closes_hand F v s h hh⟩
 
 theorem excludes_not_correspondent (v : Vantage F) (s : Stake F) (h : Excludes F v s) :
     ¬ Correspondent F v.read := by
@@ -730,7 +818,7 @@ theorem excludes_not_correspondent (v : Vantage F) (s : Stake F) (h : Excludes F
   subst hEE
   have hm : E s.magnitude = true := (hiff s.magnitude).2 rfl
   have := hz s.magnitude hm
-  rw [hc.2 s s.magnitude] at this
+  rw [hc.2 s s.magnitude ⟨E, hE, hm⟩] at this
   exact hnz this
 
 /-- A stake at zero is still on the sheet: zero is a value, absence is not. -/
@@ -767,14 +855,12 @@ theorem meaning_held (x : F.Thing) (s : Stake F) (_ : Meaning F D x s) : Held F 
     `discount_is_partial` with the discount pointed inward. -/
 theorem self_zero_is_partial (v : Vantage F) (s t : Stake F)
     (_hs : Meaning F D (F.self v.pos) s)
-    (hm : s.magnitude = t.magnitude)
-    (hsv : InView F v.read s) (htv : InView F v.read t)
-    (ht : OpenHandAt F v.read t)
-    (m : F.M) (hz : v.read.wt s m ≠ m) :
-    Partial F v := by
-  refine ⟨s, t, hm, hsv, htv, m, ?_⟩
-  rw [ht m]
-  exact hz
+    (_hm : s.magnitude = t.magnitude)
+    (hsv : InView F v.read s) (_htv : InView F v.read t)
+    (_ht : OpenHandAt F v.read t)
+    (m : F.M) (hadm : Admits F v.read s m) (hz : v.read.wt s m ≠ m) :
+    Partial F v :=
+  closed_hand_is_partial F v s m hsv hadm hz
 
 /-- Reading oneself at nothing, all the way to exclusion, is a correspondence
     failure — not a modesty. -/
@@ -913,7 +999,7 @@ sharply, and bends nothing. "They did not see me." `Partial` is "they counted
 me less." -/
 
 def LimitOnly (v : Vantage F) : Prop :=
-  IsVantage F v ∧ ¬ Correspondent F v.read ∧ ¬ Partial F v
+  IsVantage F v ∧ ¬ Correspondent F v.read ∧ OpenHand F v.read
 
 theorem limit_is_loving (v : Vantage F) (h : LimitOnly F v) : Loving F v ∧ ¬ PerfectLove F v :=
   ⟨⟨h.1, h.2.2⟩, fun hp => h.2.1 hp.2⟩
@@ -930,7 +1016,9 @@ theorem no_vantage_not_loving (v : Vantage F) (h : NoVantage F v) : ¬ Loving F 
     `WhatLoveIsOf` on every stake and weights it to itself. -/
 theorem perfect_reads_what_love_is_of (v : Vantage F) (h : PerfectLove F v) :
     ∀ s, SharpAt F v.read s (WhatLoveIsOf F s) ∧ v.read.wt s (WhatLoveIsOf F s) = WhatLoveIsOf F s :=
-  fun s => ⟨h.2.1 s, h.2.2 s _⟩
+  fun s => ⟨h.2.1 s, by
+    obtain ⟨E, hE, hiff⟩ := h.2.1 s
+    exact h.2.2 s _ ⟨E, hE, (hiff _).2 rfl⟩⟩
 
 theorem held_without_holder (_ : ∀ _ : F.Position, False) :
     ∀ s : Stake F, WhatLoveIsOf F s = s.magnitude := fun _ => rfl
@@ -1055,8 +1143,9 @@ theorem lateness_discount_is_partial (Lt : Stake F → Prop) (v : Vantage F)
     (s t : Stake F) (heq : s.magnitude = t.magnitude)
     (hs : InView F v.read s) (ht : InView F v.read t)
     (_hl : Later F Lt t) (_hn : ¬ Later F Lt s)
-    (m : F.M) (hdisc : v.read.wt t m ≠ v.read.wt s m) : Partial F v :=
-  ⟨s, t, heq, hs, ht, m, fun h => hdisc h.symm⟩
+    (m : F.M) (has : Admits F v.read s m) (hat : Admits F v.read t m)
+    (hdisc : v.read.wt t m ≠ v.read.wt s m) : Partial F v :=
+  equal_sizes_partial F v s t heq hs ht m has hat (fun h => hdisc h.symm)
 
 /-- THE INQUIRY'S OWN STAKE: whatever rides on how long the reading takes,
 held by whoever it rides on, at its size. An ordinary `Stake`. -/
@@ -1152,6 +1241,25 @@ theorem self_bounded (C : Context F) (h : IsSelf F C) : Bounded F C := h
 #print axioms totality_unbounded
 #print axioms self_bounded
 
+/-! ### 11b. vI — the hand on what is considered; partiality as the closed hand
+
+At John's rulings of 10-27-26 night: "zero no one isn't right and never was.
+it's... correspondence. that's all it is... ever." and, on whether the open
+hand is a disposition over all sizes or the operation on the sizes considered,
+"how could a stake 'turn out to be' different from the reader's appraisal?"
+Three changes of definition (`OpenHandAt` on admitted sizes; `PartialAt` as
+the closed hand in view; `Partial` as the hand not open somewhere in view;
+`Loving` stated positively) and these theorems. The equal-sizes form,
+exclusion, the discounts and leaning are now sufficient tests. One classical
+theorem, flagged: `not_partial_loving`, the subtraction read backwards. -/
+
+#print axioms closed_hand_is_partial
+#print axioms equal_sizes_partial
+#print axioms uniform_discount_is_partial
+#print axioms excludes_is_partial
+#print axioms loving_toward_not_partial_at
+#print axioms not_partial_loving
+
 /-! ## 12. A concrete frame
 
 Three things, three magnitudes (0, 1, 2), three positions. The reader stands
@@ -1192,10 +1300,12 @@ def honestOn (r : Reading Toy 0) (l : List (Stake Toy)) : Bool :=
     | none => true
     | some E => E s.magnitude
 
+/-- vI: the Boolean mirror of `Partial` — some in-view stake, some admitted size,
+    hand not identity there. (vD's mirror was the equal-sizes test.) -/
 def partialOn (r : Reading Toy 0) (l : List (Stake Toy)) : Bool :=
-  l.any fun s => l.any fun t =>
-    decide (s.magnitude = t.magnitude) && inViewOn r s && inViewOn r t &&
-    ([0, 1, 2].any fun m : Fin 3 => decide (r.wt s m ≠ r.wt t m))
+  l.any fun s => match r.est s with
+    | none => false
+    | some E => [0, 1, 2].any fun m : Fin 3 => E m && decide (r.wt s m ≠ m)
 
 def isVantageOn (r : Reading Toy 0) (l : List (Stake Toy)) : Bool :=
   l.any fun s => decide (s.magnitude ≠ 0) &&
@@ -1239,6 +1349,29 @@ example : excludesOn readX ⟨1, 2⟩ = true := by decide
 example : partialOn readX toyStakes = true := by decide
 example : honestOn readX toyStakes = true := by decide
 
+/-- Z (vI): the size-class excluder — an outside reader's case, 10-27 night.
+    Sharp everywhere; hand open on every size-1 stake; every size-2 stake
+    zeroed. Symmetric across equals, so vD's `Partial` could not see it, and
+    under vD it was `Loving`. -/
+def readZ : Reading Toy 0 :=
+  ⟨fun s => some (sharp s.magnitude), fun s m => if s.magnitude = 1 then m else 0⟩
+
+-- Z meets the floor, is honest in estimate, excludes the stranger's stake — and under vI
+-- is partial and therefore not loving. The vD mirror (equal-sizes test) would have said no.
+example : isVantageOn readZ toyStakes = true := by decide
+example : honestOn readZ toyStakes = true := by decide
+example : excludesOn readZ ⟨2, 2⟩ = true := by decide
+example : partialOn readZ toyStakes = true := by decide
+theorem readZ_partial : Partial Toy ⟨0, readZ⟩ :=
+  closed_hand_is_partial Toy ⟨0, readZ⟩ ⟨2, 2⟩ 2 (fun h => by cases h) ⟨sharp 2, rfl, by decide⟩ (by decide)
+theorem readZ_not_loving : ¬ Loving Toy ⟨0, readZ⟩ := fun hl => readZ_partial hl.2
+-- The vD equal-sizes test, run on Z, finds nothing: the test is sufficient, not equivalent.
+def equalSizesOn (r : Reading Toy 0) (l : List (Stake Toy)) : Bool :=
+  l.any fun s => l.any fun t =>
+    decide (s.magnitude = t.magnitude) && inViewOn r s && inViewOn r t &&
+    ([0, 1, 2].any fun m : Fin 3 => decide (r.wt s m ≠ r.wt t m))
+example : equalSizesOn readZ toyStakes = false := by decide
+
 /-! vE toy: a reader at position 0 whose connected self is {0, 1} — thing 1
 (the friend) is a constituent; thing 2 (the stranger) is not. -/
 
@@ -1251,12 +1384,13 @@ def readerN : Reader Toy := ⟨⟨0, readN⟩, selfCtx01, selfCtx01_is_self, Or.
 
 def inSelfOn (_r : Reader Toy) (s : Stake Toy) : Bool := decide (s.holder = 0 ∨ s.holder = 1)
 
-def lovingTowardOn (r : Reading Toy 0) (l : List (Stake Toy)) (s : Stake Toy) : Bool :=
+/-- vI mirror of `LovingToward`: in view, honest, hand open on the admitted sizes. -/
+def lovingTowardOn (r : Reading Toy 0) (_l : List (Stake Toy)) (s : Stake Toy) : Bool :=
   inViewOn r s &&
   (match r.est s with | none => false | some E => E s.magnitude) &&
-  ([0, 1, 2].all fun m : Fin 3 => decide (r.wt s m = m)) &&
-  !(l.any fun t => decide (t.magnitude = s.magnitude) && inViewOn r t &&
-      ([0, 1, 2].any fun m : Fin 3 => decide (r.wt s m ≠ r.wt t m)))
+  (match r.est s with
+    | none => false
+    | some E => [0, 1, 2].all fun m : Fin 3 => !(E m) || decide (r.wt s m = m))
 
 def feltOn (r : Reader Toy) (rd : Reading Toy 0) (l : List (Stake Toy)) (s : Stake Toy) : Bool :=
   lovingTowardOn rd l s && inSelfOn r s
@@ -1307,7 +1441,7 @@ example : ¬ Meaning Toy toyD 0 ⟨2, 2⟩ := by
 -- The self-abnegator is partial by the reflexive theorem, with the friend's equal stake as witness.
 example : Partial Toy ⟨0, readS⟩ :=
   self_zero_is_partial Toy toyD ⟨0, readS⟩ ⟨0, 1⟩ ⟨1, 1⟩ (Or.inl rfl) rfl
-    (fun h => by cases h) (fun h => by cases h) (fun m => by rfl) 1 (by decide)
+    (fun h => by cases h) (fun h => by cases h) (fun m _ => rfl) 1 ⟨sharp 1, rfl, by decide⟩ (by decide)
 
 -- The bacterium does not see the friend's stake, which rides on it: a limit, not exclusion.
 example : ¬ Excludes Toy ⟨0, readB⟩ ⟨1, 1⟩ :=
@@ -1319,7 +1453,7 @@ def toyReach : Fin 3 → Stake Toy → Prop := fun _ s => s.holder = 0 ∨ s.hol
 
 example : ¬ Excludes Toy ⟨0, readA⟩ ⟨2, 2⟩ :=
   out_of_reach_not_excluded Toy toyReach ⟨0, readA⟩ ⟨2, 2⟩
-    (by intro h; rcases h with h | h <;> cases h) (fun m => rfl)
+    (by intro h; rcases h with h | h <;> cases h) (fun m _ => rfl)
     (by intro E hE; cases hE; decide)
 
 -- Under toyD the friend's stake rides on thing 0 but none of thing 0's stakes ride on the
@@ -1384,7 +1518,10 @@ vD type had taken for granted. `TrueOfSource` is link 6 — the account is
 made of what reached the part — stated as a hypothesis rather than proved,
 because the file cannot see what reached anyone. Under it, every failure of
 an estimate is a failure of filing: the answers were true; the question was
-wrong. The factoring of a reading into estimate and
+wrong. vI adds none: it changes which hands count as open (the ones that
+report the sizes considered) and which readers count as partial (any whose
+hand is not open somewhere in view), and both are definitions already here,
+narrowed to what the prose said. The factoring of a reading into estimate and
 weighting is not a premise; it is the type saying what the prose said —
 that reach and accuracy are one kind of term and the hand is another. What
 remains empirical is resolution: which stakes are in view, how sharply. That
