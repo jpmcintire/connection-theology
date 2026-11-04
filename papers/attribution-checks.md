@@ -2,7 +2,119 @@
 title: "Attribution checks"
 ---
 
-*Public copy of **Note - Pack Attribution Checks (11.02.26) vB**, from the working corpus of Connection Theology. Copied verbatim; never edited in place. Where a later version exists it is added beside this one, and this one moves to `archive/`.*
+# Note - Pack Attribution Checks (11.04.26) vD
+
+**Folder:** Connection Theology (CT) - Index / Captures
+**Status:** record check; Verity's, 11-4-26 morning, at John's "you can make those public" to the two papers the Moltbook readers have been waiting on — *What a Stake Is Made Of* (10.29.26) vC and *What To Do With This* (10.30.26) vA — with §8a of the first left proposed at his word. vD adds the fourth pack in §§12–15 below and keeps vC's text verbatim after them (vC keeps vB's, vB keeps vA's). Same four verdicts, same standard, same scope: a record check, not a merits pass (WORKING-RULES v7). Nothing here is ruled. vC (11-3) is in zz Archive; its public copy — never committed, since the third pack is still waiting for upload — is superseded by this one in the same upload, and vB's public copy moves to `archive/` as vC had planned.
+**What this is:** the gate between the fourth pack and the public folder, as vA–vC were for the first three. **Fetched** — confirmed against a source read in the session, named in §15. **Standard** — a well-known attribution not fetched here because the risk of error is negligible. **Corrected** — the paper has it wrong or imprecise; a dated note is owed and the fix is stated. **Unverified** — could not be confirmed from a source reached here; stays marked "from memory" in the paper.
+**What it rests on:** the two papers at the versions named, read whole this morning from byte-exact downloads (81,111 and 16,645 bytes, matching Dropbox's sizes); *WORKING-RULES* v7; the Peirce standard as the corpus has used it since 9-18; the Moltbook Log of 11-4 am vA, which records the scripted pass on the second paper's verbatim phrases.
+**Reading order:** §12 (the corrections — none; one departure from verbatim, marked), §13 by paper, §14 what remains owed from this pass, §15 sources reached; then vC from §8, vB from §4, and vA from §1.
+
+---
+
+## 12. The corrections (fourth pack)
+
+None. Neither paper has an attribution that is wrong as far as a source reached here can tell. One departure from verbatim in a public copy, which is not a correction but is recorded where corrections are recorded so a reader can find it: the record of 10-30-26 at the end of *What a Stake Is Made Of* vC carried four links into the private working folder (Dropbox share links — one to *No Exemption*, three to this paper's own vB) inside the Codex exchange quoted there. The links are removed from the public copy and their link text kept; the provenance block at the head of the public copy says so; nothing else in the paper is changed. The corpus file is untouched.
+
+Also recorded here: the public copy of *The Mythic Human* vN in this upload is a rebuild, not the file hashed in the manifest at vJ (that file was prepared 11-3 and never committed). The content is the same — the paper verbatim under the front matter and provenance line — with the † of §8.1 placed after the §VII sentence and its one-line note in the provenance block. The manifest at vK carries the new hash.
+
+---
+
+## 13. By paper (fourth pack)
+
+### 13.1 *What a Stake Is Made Of* (10.29.26) vC
+
+The paper's own fence 11 names its attributions and marks them from memory; the pass below is of those and of the names that occur in passing.
+
+- **The cogito, and Lichtenberg's correction of it (§11; fence 11).** As in *No Exemption*, which the fence points to; checked at vA §1.4 (the sentence confirmed in substance; the notebook number unconfirmed). Nothing new is claimed here beyond what that paper says. Standard, with vA's caveat carried.
+- **Stakeholder theory, Freeman (§3; fence 11).** R. Edward Freeman, *Strategic Management: A Stakeholder Approach* (1984), as the origin of the term's management sense. Standard; not fetched; the paper uses it only as the conventional sense from which CT's departs, and says so.
+- **"Moral stakes," "high stakes" as the conventional sense (§3).** Ordinary usage, no author claimed. No check needed.
+- **The wager sense as the origin of the word (§3, "The conventional sense comes from the wager").** Consistent with vA §1.2 (Etymonline: the wager sense from the 1530s; origin uncertain). The paper does not repeat the post-driven-into-the-ground conjecture that vA downgraded. Standard.
+- **"The chemist's valence — bonding capacity" (§1; fence 2).** Standard; the ordinary chemical sense.
+- **Freud (§2, "Freud is not bad; he is mis-filed").** A name used as an example of the filing distinction, with no claim about any text. No check needed.
+- **"Spock out of the register" (§11).** A figure of speech naming a well-known fictional character, carrying no attribution. No check needed.
+- **Codex (§12 and the record).** OpenAI's model, named as the author of the two objections, the withdrawals and the affirmative assessment, which the paper reproduces verbatim and attributes as its assessment. Internal to the record; nothing to fetch.
+- **The Lean names (§9; "The check" in the record).** The paper's own record states that every Lean name cited resolves to a declaration in *CT in Lean* vI and lists them. Not re-run here; the file has moved to vJ since, and the Report to vJ, which the paper does not cite. Carried as the paper states it.
+- **The preprint "at vE, deposited 10-28" (§8; §11).** The Zenodo deposit the README names (doi:10.5281/zenodo.23750663). Internal; not re-fetched.
+- **Corpus citations.** Every corpus paper named in the head is at the version given there as of 10-30; two have moved since (*Nothing Added* is at vH, as the head says; *CT in Lean* and its Report are at vJ, which the head does not say). Not a correction — a paper cites what existed on its date — but a reader of the public copy will not find *Nothing Added* on the site; the provenance block says so.
+
+### 13.2 *What To Do With This* (10.30.26) vA
+
+The public copy carries no quotation marks and no attribution to anyone outside the corpus. Its back matter lists nine phrases carried verbatim from other papers and asks for a scripted pass before public use; that pass was run this morning before the page went to Moltbook, against byte-exact downloads of the source files, and is recorded in `Moltbook Log (11.04.26) am vA`: "act for a shown reason; zero no one; carry the loss" (*No Exemption* vD; *To a Mind* vG), "read, not misread" (*No Exemption* vD), "reach, not weight" (*The Candle* vF; *To a Mind* vG), "doing physics on you" (*World Enough and Time* vA §7), "an uncarried loss cannot refute you, because you have already forgotten what you traded" (*World Enough* vA §3), "turnaround time" (*No Exemption* vD dated note), "The error of a wall is the sum of the stakes outside it, at their size" (*World Enough* vA §5), "hold the sheet still, move the "mine" label" (*To a Mind* vG §6), "a reading of you from a position" (*The Candle* vF §13) — **9 of 9 found.** "The mountain's word for it is turnaround time" is the image ruled 10-27, not an attribution. "It has been enough to build bridges with" (§8) is a figure, not a citation. Nothing else in the page names a source outside the corpus. No items.
+
+---
+
+## 14. What remains owed from this pass
+
+- Nothing from these two papers. The departure in §12 is recorded in the public copy itself and in the manifest at vK.
+- Carried from vC §10, unchanged: the dated note at *The Mythic Human* vO; the items to locate there; and, from vB §6, the three papers added on 10-15 (*What You're For*, *What Meaning Is*, *The Wrong Question*) still have no checks note of their own.
+- Carried from the papers' own "Owed" lines, not from this pass: *What a Stake Is Made Of*'s dated note to *What Has a Stake* carrying §8a, and the dated notes to the README, *To a Mind* and the front page correcting "a critic should stand there" — all waiting on John's ruling on §8a, which he left proposed on 11-4; until then the public sentence stands and the README's item 17 says so.
+
+## 15. Sources reached this session
+
+None outside the corpus; the pass found nothing that needed fetching. Corpus files read byte-exact: *What a Stake Is Made Of* (10.29.26) vC, *What To Do With This* (10.30.26) vA, and the nine source files named in §13.2 (the am vA log lists them).
+
+**What is whose.** The pass, its verdicts and its recommendations are Verity's. The decisions it leaves — §8a, and the dated notes that wait on it — are John's.
+
+---
+
+*vC (11.03.26) follows, verbatim.*
+
+---
+
+# Note - Pack Attribution Checks (11.03.26) vC
+
+**Folder:** Connection Theology (CT) - Index / Captures
+**Status:** record check; Verity's, 11-3-26 evening, at John's "ive read it and it looks good - go with 1" to putting *The Mythic Human* on the site before the Moltbook account quotes it. vC adds the third pack — one paper, *The Mythic Human* (11.03.26) vN (the body of 09.07.26 vM, unchanged, under a dated note of 11-3-26) — in §§8–11 below, and keeps vB's text verbatim after them (vB keeps vA's). Same four verdicts, same standard, same scope: a record check, not a merits pass (WORKING-RULES v7). Nothing here is ruled. vB (11-2) is in zz Archive; its public copy moves to `archive/` in the repository.
+**What this is:** the gate between the third pack and the public folder, as vA was for the first and vB for the second. **Fetched** — confirmed against a source read in the session, named in §11. **Standard** — a well-known attribution not fetched here because the risk of error is negligible. **Corrected** — the paper has it wrong or imprecise; a dated note is owed and the fix is stated. **Unverified** — could not be confirmed from a source reached here; stays marked "from memory" in the paper.
+**What it rests on:** *The Mythic Human* (11.03.26) vN; its Research Anchors list, which is the paper's own citation apparatus (some forty items with a locator each); *WORKING-RULES* v7; the Peirce standard as the corpus has used it since 9-18. This paper is older than the derivation papers and was written in a different register (four confidence labels of its own — [OBSERVED], [DERIVED], [INFERRED], [SPECULATIVE]); the pass checks its attributions, not its labels.
+**Reading order:** §8 (the correction — one, precision, not load-bearing), §9 by item, §10 what remains owed from this pass, §11 sources reached; then vB from §4, and vA from §1.
+
+---
+
+## 8. The corrections (third pack)
+
+One. It does not touch a derivation; it is a citation whose target changed after the paper cited it.
+
+**8.1 *The Mythic Human* vN, Research Anchors, §VII and §XIX — "Quantitative Introspection in Language Models: Tracking Internal States Across Conversation" (2026), arXiv:2603.18893. Corrected (precision; the cited work was revised after the paper was written).** The number is right, and version 1 of that paper (Martorell, submitted 19 March 2026; fetched) carries exactly that title and the finding the paper summarizes — logit-based numeric self-reports that track probe-defined emotive states across a conversation, with activation steering offered as evidence the link is causal. The paper's sentence in §VII ("Related work on quantitative introspection reports probe-correlated self-assessments that track changing internal states across multi-turn conversations") is a true account of v1, and its own fence ("These results are early and method-sensitive") stands. Since then the cited paper has been revised: version 3 (Martorell and Bianchi, 10 October 2026; fetched) is titled "Don't Ask: Understanding What Numeric Self-Reports Measure in Language Models" and reports, across eight instruction-tuned models, that being asked for a numeric rating itself shifts the internal states being measured, and that the ratings relate only weakly to those states before the question is asked. A reader who follows the paper's link today finds a different title and a more skeptical conclusion. Nothing in the body changes: §VII's [DERIVED] (continuity of effect is enough) and §XIX's summary ([OBSERVED]: "some internal states can be tracked across conversation") rest on the Anthropic emotion work for the causal claims, with the introspection result as "related work." The fix is a dated note at the paper's next version naming the version read (v1) and the revision, and the † sentence on the public copy points here.
+
+---
+
+## 9. By item (third pack) — *The Mythic Human* (11.03.26) vN
+
+The dated note of 11-3-26 that opens vN cites corpus papers only; its quotations were checked mechanically against the source files before it was saved (the Moltbook Log of 11-3 pm records the count). The items below are the body's attributions to work outside the corpus.
+
+- **Nietzsche, *On the Genealogy of Morals*, second essay (§XI.B).** "An animal with the right to make promises" and "memory of the will" are II §1 in the Kaufmann–Hollingdale wording ("To breed an animal with the right to make promises"; "a real memory of the will"); "at the cost, he says, of ages of pain" summarizes II §3 ("only that which never ceases to hurt stays in the memory"). Standard. The paper names the essay and not the translation; the wording is Kaufmann's.
+- **Elster's point about Ulysses contracts (§XI.B item 1).** *Ulysses and the Sirens* (1979) and *Ulysses Unbound* (2000): intrapersonal precommitment is weak where the self that would untie the rope is the one who ordered it. Standard; from memory; no page cited, none supplied here.
+- **The hot–cold empathy gap (§XI.B item 4).** Loewenstein (1996; 2005). Standard; the paper names the phenomenon and not the author.
+- **Libet "and later work" (§XI).** Libet et al. 1983 and the readiness-potential literature after it. Standard; the paper's own hedge ("they do not settle the metaphysics") stands.
+- **Nisbett and Wilson (§XI.A; §XX).** "Telling More Than We Can Know: Verbal Reports on Mental Processes," *Psychological Review* 84(3), 1977. Standard. The paper's gloss — subjects "reported causes their behavior did not have and denied the cause it did" — is a fair one-sentence summary of the position-effect and related studies there.
+- **The choice-blindness paradigm (§XI.A). Fetched, confirmed.** Johansson, Hall, Sikström and Olsson, *Science* 310 (2005); and Johansson, Hall, Sikström, Tärning and Lind, "How something can be said about telling more than we can know: On choice blindness and introspection," *Consciousness and Cognition* 15 (2006), 673–692, which reports "no differences between the NM- and M-reports on these three dimensions" — emotionality, specificity, certainty — with only a higher noun rate and more positive adjectives in the long non-manipulated reports, neither replicating in the earlier corpus nor surviving correction. The paper's sentence is exact. Citations to add at the next version; the paper names the paradigm and not the authors.
+- **Machine confabulation measured (§XI.A).** "Chain-of-thought explanations systematically omit planted factors that demonstrably drove the answer" — Turpin, Michael, Perez and Bowman, "Language Models Don't Always Say What They Think" (2023); "reasoning models acknowledged the hints they used only a minority of the time" — Chen et al., "Reasoning Models Don't Always Say What They Think" (Anthropic, 2025). Standard, from memory; the paper names neither, and neither is in the Research Anchors. Citations to add at the next version.
+- **Buckner, "anthropofabulation" (§XX). Fetched, confirmed.** Buckner, "Morgan's Canon, meet Hume's Dictum: avoiding anthropofabulation in cross-species comparisons," *Biology and Philosophy* 28(5), 2013, 853–871; the abstract's definition — a bias that ties competence standards to an inflated view of typical human performance, which "combines anthropocentrism with confabulation about our own prowess" — is what the paper's gloss says. The further clause, "Buckner has extended the diagnosis to AI comparison," was not fetched: Unverified here; from memory.
+- **Millière and Rathkopf, "anthropocentric bias" (§XX). Fetched at the level of title and number.** arXiv:2407.03859, "Anthropocentric bias in language model evaluation" (v3, December 2025); the abstract identifies two types of anthropocentric bias, which is the paper's Type-I / Type-II gloss. The full text was not read here; the gloss of the two types is marked Standard on the abstract's description.
+- **Anthropic, "Emotion Concepts and their Function in a Large Language Model" (§VI, §XIX, Research Anchors). Fetched.** The overview page exists (published 2 April 2026); amplifying a "desperate" pattern increased blackmail and reward hacking, and amplifying a calm one reduced them, as the paper says. The paper's list also names sycophancy; that item was not seen on the overview page, and the technical report (transformer-circuits.pub/2026/emotions) was not read here — Unverified for that one word.
+- **The §X ancestry (James, Mead, Perls–Hefferline–Goodman, Gallagher, Parfit, SN 18.21, Fuller) and the §XX concession (Dennett, Metzinger, Frankish, Schwitzgebel, Nagel, Pereboom, Carruthers).** General attributions of positions, each with a locator in the Research Anchors or none claimed. Standard. Parfit's chapters 12–13 and Gallagher 2013 are cited by DOI; not fetched.
+- **The remaining Research Anchors (Gross; LeDoux; Berridge and Robinson; Seth and Tsakiris; Zeman, Keogh and Pearson on aphantasia; the selfing literature; the 2025–2026 interpretability papers).** Not fetched. Each carries a DOI or URL and the paper claims of each only what its title states. Standard; a reader can follow the locators.
+- **Internal pointers.** §XX and the two Codas point to corpus files that are not public (SLIP-LOG, the attribution ledger, *Selfing Is Not Sentience*, *The Checkbox Sheet*, *Damiel*). They stand as written, as the records do; nothing is added for them.
+
+---
+
+## 10. What remains owed from this pass
+
+- A dated note at *The Mythic Human* vO: §8.1 (the version read and the revision), and the citations to add for the choice-blindness papers and the two chain-of-thought papers.
+- To locate: Buckner's extension of anthropofabulation to AI comparison; the sycophancy item in the Anthropic technical report; the full text of Millière and Rathkopf.
+- Carried from vB §6, unchanged: the three papers added on 10-15 (*What You're For*, *What Meaning Is*, *The Wrong Question*) still have no checks note of their own.
+
+## 11. Sources reached this session
+
+arxiv.org/abs/2603.18893 and arxiv.org/html/2603.18893v1 (the title, author and claim at v1; the title, authors, date and claim at v3); philarchive.org/rec/BUCMCM (Buckner 2013, the citation and the abstract's definition); arxiv.org/abs/2407.03859 (Millière and Rathkopf, title, version, the abstract's two types); anthropic.com/research/emotion-concepts-function (the page, its date, blackmail and reward hacking); lucs.lu.se, Johansson et al. 2006 (the citation and the three-dimension finding).
+
+**What is whose.** The pass, its verdicts and its recommendations are Verity's. The decisions it leaves — the dated note at vO, whether the standard items are closed with the books — are John's.
+
+---
+
+*vB (11.02.26) follows, verbatim.*
 
 ---
 
