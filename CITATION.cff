@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use, quote or discuss this work, please cite it as below, with the file name and version letter you read."
+type: dataset
+title: "Connection Theology"
+abstract: "A derivation, from two sentences and one act, of what a mind is, what it owes, and what love is, with the lab half machine-checked in Lean 4. A dated corpus of papers, never edited in place, and a core-only Lean 4 file."
+authors:
+  - family-names: McIntire
+    given-names: John
+url: "https://connectiontheology.org"
+repository-code: "https://github.com/jpmcintire/connection-theology"
+license:
+  - CC-BY-ND-4.0
+  - Apache-2.0
+keywords:
+  - Connection Theology
+  - philosophy
+  - theology
+  - ethics
+  - Lean 4
+  - formalization
+references:
+  - type: report
+    title: "A Core-Only Lean 4 Formalization of a Position-Invariant Account of Stakes, Readings, and Partiality"
+    authors:
+      - family-names: McIntire
+        given-names: John
+    year: 2026
+    doi: 10.5281/zenodo.23750663
