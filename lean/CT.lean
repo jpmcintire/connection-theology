@@ -1,5 +1,5 @@
 /-!
-# CT — the lab half, in Lean 4 (core only, no Mathlib) — vI
+# CT — the lab half, in Lean 4 (core only, no Mathlib) — vO
 
 Experiment, 10-13-26, at John's "y - now please." vB the same night: adds the
 constructive form of the invariance test, the note that the name never
@@ -140,6 +140,156 @@ nothing. One theorem is classical and says so: `not_partial_loving`
 (¬¬open ⇒ open). The dimness side is untouched: an unseen stake admits
 nothing, so the hand is vacuously open there; the grandmother and the
 bacterium are loving as before. Compiles clean under Lean 4.35.0.
+
+vJ, Tuesday 11-3-26, afternoon, at John's "ok - let's do the lean run on
+stakes": the run owed by *What a Stake Is Made Of* (10.29.26) vC §9. §12a
+adds, beside `Stake` and altering nothing above it: a `Filer` — a state held
+as of something, guided by it, able to be wrong about it; the floor of
+thinking as one predicate (the thermostat files; the rock does not); an
+`Edge` — holder, what it rides on, size: `Stake` with the dependency in the
+type, so that `Stake` is recovered by forgetting `on` and §5a's parameter `D`
+is derived from a set of edges rather than supplied; a `Region` — a set of
+steps, the region of a step defined by FOLLOWING a declared dependency
+relation rather than by collection — run in its own section and then as a
+frame with `M := Region Step`: inclusion is a partial order, it arises from
+the dependencies exactly where a sub-dependency rides inside another
+(`hangsOn_sub_of_mem`), it is not total, it drops degree, and it does not
+pick a direction of choice (`inclusion_underdetermines`); with the region as
+`M` every theorem in the file still holds and the second hinge is the same
+`rfl` (`region_held`); a `Direction` at the floor — a preference is a stake,
+and reading another's stake down for crossing my direction is partiality by
+the one discount theorem (`direction_as_weight_is_partial`); and an `ActOn`
+— an act on a stake in reach adds nothing to partiality or to size. What the
+run does not do: it does not make the one declared definition a theorem.
+`Stake` can now be built from an account of filing and dependency instead of
+standing alone, and the pieces are each checkable for what they say; the
+definition moved to `Filer.Files` and `hangsOn`, where a critic should now
+read. Compiles clean under Lean 4.35.0. The three toy theorems inherit
+`propext` from the `Toy` frame's `Fin 3` numerals, as the vD–vI toy theorems
+do; `sub_antisymm` and `region_forgets_degree` use extensionality; the rest
+of the run needs no axioms.
+
+vK, Wednesday 11-4-26, at John's "totally agree - you can change it
+accordingly": THE SIXTH NARROWING, found by an outside reader. `Filer.Files`
+was handed blind to three model sessions with one instruction — break it in
+either direction with a case built as a `Filer` and compiled. Verity GPT built
+a hinged sign with a latch: the printed line can be right or wrong about the
+room (`IsAccount`), the latch decides whether the sign stays or falls
+(`Guided`), and the two never touch — two states that say the same thing about
+the room in every world do different things. It compiled against vJ as sent,
+and a sign does not think. So `Files` was too wide at exactly the second
+declared weak point of the 11-3 run note: the dependence of the next step on
+the state did not have to run through the state's fit. vK adds the clause the
+case dictates: READ OFF THE ACCOUNT — states with the same fit profile have
+the same next step (`ReadOff`); `Files := IsAccount ∧ Guided ∧ ReadOff`. The
+sign fails it by its author's own second theorem (`hingedSign_not_files`); the
+thermostat, Grok's vending machine and the rebuilt contemplator pass, because
+for them the state is the claim (`readOff_of_fits_eq`); the rock fails as
+before. Grok's contemplator — a thinker whose held thought changes nothing,
+not even its next thought — does not file and should not: a snapshot is not
+thinking; with the next step read as the next thought it files, and the
+`Filer` docstring now says that `Step` may be the filer's own next state. Not
+closed by this run and declared: the first weak point, aboutness — a system
+whose one variable both tracks something and drives its dynamics (a rock that
+cracks when hot) passes even the tightened clause; that needs the holder's own
+direction (§12a (4)) folded into the filing line, and is owed. Compiles clean
+under Lean 4.35.0; no new axiom; the outside readers' cases are in §12a (6)
+with credit.
+
+vL, Wednesday 11-4-26, at John's "direction seems right - you can build": THE
+DIRECTION RUN, at the first declared weak point. The hot rock — one variable
+that tracks the room's heat and drives whether it cracks — passed every clause
+of vK (`hotRock_files_vK`), and nobody says a rock thinks. The run set out to
+fold the holder's own direction into the filing line, as "misfit runs against
+what the holder moves toward," and found first, by a finite search kept beside
+the file, that a target cannot do it: any dynamics settles somewhere, its
+settling set can be declared its target, and the rock then "moves toward"
+cracking-when-warm exactly as the thermostat moves toward the set point. What
+separates them is not where the step goes but whether the step CONNECTS the
+state with the thing at all. `Filer` gains one field, `act` — what a step does
+to the state held and to the thing — and `Files` gains a fourth clause,
+ENGAGED: either what the step does to the thing depends on what is held, or
+what comes to be held depends on the thing. The thermostat heats the room by
+its strip; the vending machine takes the coins by its credit; the contemplator
+re-reads the claim and its thought changes by it. The rock's cracking touches
+neither the room nor, by the room, its own state (`hotRock_room_untouched`,
+`hotRock_state_blind`): it is not engaged, and it does not file. "Direction"
+survives as what an engaged step does — toward the set point, toward fit — and
+is not itself the clause. What is still declared, and said so: `fits` and
+`about`; the file now checks that the declared aboutness is backed by a step
+that meets the thing, and does not check what the state is of in the world.
+Nothing above §12a (1) is altered; every vK theorem holds with the same proof,
+except that the three `Files` proofs gain their fourth conjunct and one
+negative proof's projection is renumbered. Compiles clean; no new axiom.
+
+vM, Wednesday 11-4-26, afternoon, at John's "y" to the proposal that followed
+his "again, aren't we saying: if you stop thinking...you're no longer doing
+ethics." THE WEIGHTING AS A FILING, §12b. The weighting clause of 10-20 — a
+weighting is a claim about the stake weighted, and its reason has to be
+about the dependencies — had stood on the status card as a ruling beside the
+inversion, so that the lab result rested on two rulings. John's sentence
+makes it one: inside thinking, what a reader does with a stake is a filing,
+and a filing is a claim about what it is filed as of; a weighting that is
+not a claim is not a thinking step and is not in the conversation. §12b
+writes the first half down. `handOf v s` is a reader's hand on a stake taken
+as a `Filer` — the state is the size the hand reports, the ways are the
+stake's sizes, the state fits when the report is the size, the step is to
+act on the report. It is an account (`hand_is_account`: link 5 as a theorem,
+not a remark on the type), guided, and read off; it files whenever its
+acting is real (`hand_files`, with engagement as the hypothesis reach
+supplies, since the base frame has no reach). The open hand is the fitting
+state (`open_hand_fits`); a closed hand is a misfit (`closed_hand_misfits`):
+partiality is a wrong claim, not a broken rule — "false, not forbidden" as a
+filing fact. And the dilemma gets its first horn as a theorem: a reason that
+tracks size never yields a discount (`size_reason_no_discount`), so it can
+only be a correct reading of a smaller stake; the second horn was already
+`discount_for_reason_is_partial`. All five are parametric in `F` and need no
+axioms. The toy: the discounter's hand on the stranger's stake reports 1 at
+2 and misfits; the sun's fits. Nothing above §12b is altered. What is not
+here, and said so: that a weighting IS a filing is the inversion, ruled
+10-29, not a theorem of this file; the file shows that, taken as one, the
+hand has every property the filing line asks and that the two horns follow.
+
+vN, the same afternoon, at John's "y" to writing the subtraction test for the
+hand out as a theorem rather than leaving it to the rock's version. Two
+theorems, no new definition of substance: `always_fits_not_account` — a filer
+whose state fits every way is not an account, for any filer — and
+`blind_hand_not_account` — a "weighting" that cannot be wrong about the stake,
+one that fits every size, is not a claim about it. That is the test the
+inversion is checked by, in the file: subtract the hand's being about the
+stake and nothing that could be called a weighting remains. The file still
+does not prove that a real weighting IS a filing; it shows that whatever is
+not one is not a weighting either. Both theorems need no axioms.
+
+vO, Thursday 11-5-26, at John's "if you feel read to dupe/revise the lean -
+go for it." THE RESTATEMENT OWED SINCE vM, §12c. The weighting clause's
+second half says a weighting's reason has to be ABOUT THE DEPENDENCIES; §12b
+represented that as "tracks size" — the same verdict for any two stakes of
+one size — because in the base frame `M` is a bare type and size is the only
+handle on the dependencies there. §12a (3) built the frame in which the size
+IS the dependencies: `M := Region Step`, a stake's magnitude the set of steps
+hanging on its edge. §12c says "about the dependencies" there, as a reason
+that is a function of what hangs on the edge, and checks that it is the same
+hypothesis. `AboutTheDependencies P` — the reason's verdict is a function of
+the stake's magnitude and nothing else — implies "tracks size"
+(`about_deps_tracks_size`), so the first horn restates
+(`about_deps_no_discount`); in the region frame a reason given on regions is
+about the dependencies by definition (`ofRegion_about_deps`), and on an edge
+built from a step it is literally `Q (hangsOn Dep a)` (`ofRegion_edge`, by
+`rfl`); a reason about WHO holds the edge is not about the dependencies as
+soon as two holders can share a region (`holder_reason_not_about_deps`). And
+the dilemma is stated as one theorem (`discount_dilemma`): any discount a
+reason yields shows the reason is not about the dependencies AND the reader
+is partial — the two horns as two conjuncts, and what is excluded, a reason
+that both yields a discount and is about the dependencies, excluded by the
+one statement. The restatement inherits the region's declared loss
+(`region_forgets_degree`): a reason about HOW MUCH things go differently is
+not a function of the region, and the file does not pretend otherwise.
+Nothing above §12c is altered; no new carrier; all nine new theorems,
+the two toy instances included, depend on no axioms. (The prover said no
+to nothing; the one correction was Verity's own — a first draft of
+`about_deps_tracks_size` used `rw` on an iff, which quietly imports
+`propext`, and was rewritten as a term so the chain stays axiom-free.)
 
 WHAT THIS IS. A declared, bounded idealization (World Enough and Time §5) of
 the lab half of Connection Theology: the four words, context vs. thing, the
@@ -1496,6 +1646,919 @@ size — and his WEIGHTING zeroes them. That is exactly what the prose means by
 "read," not "misread": exclusion is not a failure to see; it is what the hand
 does with what was seen. The factoring makes the ruling visible. -/
 
+/-! ## 12a. The stake run — vJ (11-3-26)
+
+At John's "ok - let's do the lean run on stakes": the run owed by *What a
+Stake Is Made Of* (10.29.26) vC §9. That paper proposed that the one declared
+definition — a stake is a dependency — decomposes into things the file
+already has. The HOLDER is anything that FILES: holds a state as of
+something, so that its next step is guided by the state and the state can
+fail to fit. The STAKE is an EDGE in the context: a dependency of a filer's
+next step on something, there whether or not any reader sees it. Its SIZE is
+the REGION of the context that hangs on the edge: what depends on it, read by
+following the dependencies. §9 asked for six investigations and said none
+was a new result of the file. They are taken in order below.
+
+NOTHING ABOVE IS ALTERED. `Stake` stays holder and magnitude; every theorem
+above holds as it did. The run adds types beside `Stake` and checks what can
+be said with them. The file still has no order on `M` (Report §3.2): the
+region representation is run in its own section and then as a frame, so the
+base `M` stays bare. What each step settles and what it does not is said at
+the step. The honest summary is at the end of the section. -/
+
+/-! ### (1) The filing line: a `Filer` -/
+
+/-- A filer: a thing that holds a state AS OF something, with a next step
+    read off the state. `S` are the states it can hold; `W` the ways the thing
+    it is about can be; `fits` says when a state is right about a way; `next`
+    reads the step off the state. The thermostat is one (below). A rock is
+    not, because nothing it holds can be wrong (`IsAccount`). `Step` may be
+    the filer's own next state: a contemplator's next step is its next
+    thought, and nothing outward need happen (vK, after Grok's case). `act`
+    is what a step does — to the state held and to the thing (vL): a step
+    that does nothing is not a step. The thing's own action on the state (a
+    strip warming with the room) is the world's doing and is not in `act`. -/
+structure Filer where
+  holder : F.Thing
+  about  : F.Thing
+  S      : Type
+  W      : Type
+  Step   : Type
+  held   : S
+  fits   : S → W → Prop
+  next   : S → Step
+  act    : Step → S → W → S × W
+
+/-- The state is an ACCOUNT: it can fit, and it can fail to fit. A state that
+    fits every way, or none, is not about anything. -/
+def Filer.IsAccount (f : Filer F) : Prop :=
+  (∃ s w, f.fits s w) ∧ (∃ s w, ¬ f.fits s w)
+
+/-- The next step is GUIDED by the state: some other state would give a
+    different step. This is the dependency of the next step on what is held. -/
+def Filer.Guided (f : Filer F) : Prop := ∃ s, f.next s ≠ f.next f.held
+
+/-- The account a state gives: its fit profile — what it says about the thing. -/
+def Filer.account (f : Filer F) (s : f.S) : f.W → Prop := f.fits s
+
+/-- READ OFF THE ACCOUNT (vK; the sixth narrowing). The next step is read off
+    what the state says about the thing, not off some other feature of the
+    state: two states that say the same thing do the same thing. Without this
+    clause a thing can pass `IsAccount` with one part of its state and
+    `Guided` with another, the two never touching — GPT's hinged sign, below. -/
+def Filer.ReadOff (f : Filer F) : Prop :=
+  ∀ s s', (∀ w, f.fits s w ↔ f.fits s' w) → f.next s = f.next s'
+
+/-- What the step read off `s` does, taken with the thing in way `w`. -/
+def Filer.effect (f : Filer F) (s : f.S) (w : f.W) : f.S × f.W := f.act (f.next s) s w
+
+/-- ENGAGED (vL; the direction run). The step connects the state with the
+    thing: either what it does to the thing depends on what is held, or what
+    comes to be held depends on the thing. A state the thing shapes and that
+    shapes nothing done to the thing — the hot rock's temperature — is a link
+    in a causal chain, not a state held AS OF the thing. The first weak point
+    declared at 11-3 (`about` as a field) is narrowed here, not closed: the
+    file now checks that the declared aboutness is backed by a step that
+    meets the thing; it still does not check what a state is of in the world. -/
+def Filer.Engaged (f : Filer F) : Prop :=
+  (∃ s s' w, (Filer.effect F f s w).2 ≠ (Filer.effect F f s' w).2) ∨
+  (∃ s w w', (Filer.effect F f s w).1 ≠ (Filer.effect F f s w').1)
+
+/-- FILES: holds a state as of something, able to be wrong about it, guided by
+    it, guided THROUGH what it says, and engaged with the thing by what it
+    does. The floor of thinking (*Nothing Added* §6) and the holder line of
+    *What a Stake Is Made Of* §5, as one predicate. vJ had the first two
+    clauses; vK added the third; vL adds the fourth. -/
+def Filer.Files (f : Filer F) : Prop :=
+  Filer.IsAccount F f ∧ Filer.Guided F f ∧ Filer.ReadOff F f ∧ Filer.Engaged F f
+
+/-- When the fit relation is injective in the state — the state IS the claim —
+    `ReadOff` is automatic: same profile, same state, same step. -/
+theorem readOff_of_fits_eq (f : Filer F)
+    (hinj : ∀ s s', (∀ w, f.fits s w ↔ f.fits s' w) → s = s') : Filer.ReadOff F f :=
+  fun s s' h => by have e := hinj s s' h; subst e; rfl
+
+/-! ### (2) The stake as an edge: the dependency in the type -/
+
+/-- An edge: a dependency of `holder`'s next step on `on`, at a size. The
+    size is a field (the second hinge, as in `Stake`) and so is what it rides
+    on: neither takes a `Position`. §5a's `D` was a parameter standing beside
+    the stake; here it is read off the edges (`EdgeD`). -/
+structure Edge where
+  holder    : F.Thing
+  on        : F.Thing
+  magnitude : F.M
+
+/-- Every edge is a stake: forget what it rides on. -/
+def Edge.toStake (e : Edge F) : Stake F := ⟨e.holder, e.magnitude⟩
+
+/-- The dependency relation a set of edges induces: `s` rides on `x` when
+    some edge in the set is `s` riding on `x`. This is §5a's `D`, derived
+    rather than supplied. -/
+def EdgeD (E : Edge F → Prop) : Stake F → F.Thing → Prop :=
+  fun s x => ∃ e, E e ∧ Edge.toStake F e = s ∧ e.on = x
+
+/-- HELD BEFORE SEEN. An edge is held, at size, by the same `rfl` as everything. -/
+theorem edge_held (e : Edge F) : Held F (Edge.toStake F e) := rfl
+
+/-- On the sheet by being real. -/
+theorem edge_on_sheet (e : Edge F) : WholeSheet F (Edge.toStake F e) := trivial
+
+/-- THE ASTEROID NO ONE HAS SEEN. An edge no reader has in view is held at its
+    size all the same. The account is how an edge enters a view, not what
+    makes it an edge. -/
+theorem unseen_edge_held (v : Vantage F) (e : Edge F)
+    (_ : Unseen F v.read (Edge.toStake F e)) : Held F (Edge.toStake F e) := rfl
+
+/-- An edge rides on what it rides on: it is on `Meaning` under the derived
+    `D`. §5a's sheet of what matters, with no parameter left to supply. -/
+theorem edge_rides (E : Edge F → Prop) (e : Edge F) (hE : E e) :
+    Meaning F (EdgeD F E) e.on (Edge.toStake F e) := ⟨e, hE, rfl, rfl⟩
+
+/-- A filer's edge: the dependency of its next step on what it is about, at a
+    size. The size is not computed here — the base frame's `M` has nothing to
+    compute it in. (3) gives `M` structure, as an experiment. -/
+def Filer.edge (f : Filer F) (m : F.M) : Edge F := ⟨f.holder, f.about, m⟩
+
+theorem filer_edge_held (f : Filer F) (m : F.M) :
+    Held F (Edge.toStake F (Filer.edge F f m)) := rfl
+
+/-- The thermostat (*What a Stake Is Made Of* §5a). States cold / warm, held
+    as of the room, which can be cold / warm; the strip fits when it matches;
+    the next step is heat when cold, idle when warm. It files — "and CT says
+    so without flinching." -/
+inductive Temp | cold | warm
+  deriving DecidableEq
+
+inductive Act | heat | idle
+  deriving DecidableEq
+
+/-- Heating a room makes it warm. -/
+def Temp.heated : Temp → Temp
+  | _ => .warm
+
+def thermostat : Filer Toy :=
+  { holder := 0, about := 1, S := Temp, W := Temp, Step := Act,
+    held := .cold,
+    fits := fun s w => s = w,
+    next := fun s => match s with | .cold => .heat | .warm => .idle,
+    act := fun a s w => match a with | .heat => (s, w.heated) | .idle => (s, w) }
+
+/-- The thermostat is engaged: what it does to the room depends on its strip. -/
+theorem thermostat_engaged : Filer.Engaged Toy thermostat :=
+  Or.inl ⟨.cold, .warm, .cold, show Temp.warm ≠ Temp.cold from by decide⟩
+
+theorem thermostat_files : Filer.Files Toy thermostat :=
+  ⟨⟨⟨.cold, .cold, rfl⟩, ⟨.cold, .warm, show Temp.cold ≠ Temp.warm from by decide⟩⟩,
+   ⟨.warm, show Act.idle ≠ Act.heat from by decide⟩,
+   readOff_of_fits_eq Toy thermostat (fun s s' h => ((h s).1 rfl : s' = s).symm),
+   thermostat_engaged⟩
+
+/-- A rock: one state, fits everything. Not an account, so it does not file,
+    whatever its next step. -/
+def rock : Filer Toy :=
+  { holder := 2, about := 1, S := Unit, W := Temp, Step := Unit,
+    held := (), fits := fun _ _ => True, next := fun _ => (),
+    act := fun _ s w => (s, w) }
+
+theorem rock_not_account : ¬ Filer.IsAccount Toy rock :=
+  fun h => h.2.elim (fun _ h' => h'.elim (fun _ hh => hh trivial))
+
+theorem rock_not_files : ¬ Filer.Files Toy rock :=
+  fun h => rock_not_account h.1
+
+/-! #### The outside round (11-4-26; vK)
+
+`Files` at vJ was handed blind to three model sessions with one instruction:
+break it in either direction, with a case built as a `Filer` and compiled
+(*CT in Lean - Counterexample Brief - the filing line (11.04.26)*). The cases
+are kept here as the author sent them, with the disposition each received. -/
+
+/-- GROK, "too wide": a coin-operated vending machine. Holds a credit state as
+    of the coins inserted; the credit can match or fail to match; whether it
+    dispenses depends on the credit. It files, at vJ and at vK. Disposition:
+    the thermostat kind — CT draws the floor of thinking below the ordinary
+    word on purpose, and says so; not a counterexample to the claim, a
+    counterexample to the brief's wording of it. -/
+inductive Credit | none | enough
+  deriving DecidableEq
+
+inductive Dispense | no | yes
+  deriving DecidableEq
+
+def vending : Filer Toy :=
+  { holder := 0, about := 1, S := Credit, W := Credit, Step := Dispense,
+    held := .none,
+    fits := fun s w => s = w,
+    next := fun s => match s with | .none => .no | .enough => .yes,
+    act := fun d s w => match d with | .no => (s, w) | .yes => (.none, .none) }
+
+/-- Engaged: dispensing takes the coins, and whether it dispenses depends on
+    the credit. -/
+theorem vending_engaged : Filer.Engaged Toy vending :=
+  Or.inl ⟨.enough, .none, .enough, show Credit.none ≠ Credit.enough from by decide⟩
+
+theorem vending_files : Filer.Files Toy vending :=
+  ⟨⟨⟨.none, .none, rfl⟩, ⟨.none, .enough, show Credit.none ≠ Credit.enough from by decide⟩⟩,
+   ⟨.enough, show Dispense.yes ≠ Dispense.no from by decide⟩,
+   readOff_of_fits_eq Toy vending (fun s s' h => ((h s).1 rfl : s' = s).symm),
+   vending_engaged⟩
+
+/-- GROK, "too narrow": a person in pure contemplation, holding a thought as of
+    a mathematical claim, whose next step is invariably the same. As built it
+    does not file — its held thought changes nothing, not even its next
+    thought. Disposition: not a counterexample; a snapshot is not thinking.
+    The reader's own sentence says "no next action," and the next step of a
+    contemplator is the next thought: see `contemplator'`. -/
+inductive Thought | correct | incorrect
+  deriving DecidableEq
+
+inductive Contemplation | continue
+  deriving DecidableEq
+
+def contemplator : Filer Toy :=
+  { holder := 0, about := 2, S := Thought, W := Thought, Step := Contemplation,
+    held := .correct,
+    fits := fun s w => s = w,
+    next := fun _ => .continue,
+    act := fun _ s w => (s, w) }
+
+theorem contemplator_not_guided : ¬ Filer.Guided Toy contemplator :=
+  fun ⟨s, h⟩ => by cases s <;> simp [contemplator] at h
+
+theorem contemplator_not_files : ¬ Filer.Files Toy contemplator :=
+  fun h => contemplator_not_guided h.2.1
+
+/-- The same contemplator with the next step read as the next THOUGHT: holding
+    the claim as correct, the person presses on; holding it as incorrect, looks
+    again. Nothing outward happens either way. It files. -/
+inductive Next | pressOn | lookAgain
+  deriving DecidableEq
+
+def contemplator' : Filer Toy :=
+  { holder := 0, about := 2, S := Thought, W := Thought, Step := Next,
+    held := .correct,
+    fits := fun s w => s = w,
+    next := fun s => match s with | .correct => .pressOn | .incorrect => .lookAgain,
+    act := fun n s w => match n with | .pressOn => (s, w) | .lookAgain => (w, w) }
+
+/-- Engaged the other way round: looking again, what the person comes to hold
+    depends on the claim. Nothing is done to the claim. -/
+theorem contemplator'_engaged : Filer.Engaged Toy contemplator' :=
+  Or.inr ⟨.incorrect, .correct, .incorrect, show Thought.correct ≠ Thought.incorrect from by decide⟩
+
+theorem contemplator'_files : Filer.Files Toy contemplator' :=
+  ⟨⟨⟨.correct, .correct, rfl⟩, ⟨.correct, .incorrect, show Thought.correct ≠ Thought.incorrect from by decide⟩⟩,
+   ⟨.incorrect, show Next.lookAgain ≠ Next.pressOn from by decide⟩,
+   readOff_of_fits_eq Toy contemplator' (fun s s' h => ((h s).1 rfl : s' = s).symm),
+   contemplator'_engaged⟩
+
+/-- VERITY GPT, "too wide" — THE SIXTH NARROWING. A hinged sign with a latch.
+    The first state component is the printed temperature claim; the second is
+    the latch. The claim can be right or wrong about the room; whether the
+    sign stays or falls depends on the latch; the two never touch. At vJ it
+    filed. A sign does not think. -/
+inductive SignLatch | engaged | released
+  deriving DecidableEq
+
+inductive SignStep | stays | falls
+  deriving DecidableEq
+
+def hingedSign : Filer Toy :=
+  { holder := 0
+    about := 1
+    S := Temp × SignLatch
+    W := Temp
+    Step := SignStep
+    held := (.cold, .engaged)
+    fits := fun s w => s.1 = w
+    next := fun s =>
+      match s.2 with
+      | .engaged => .stays
+      | .released => .falls
+    act := fun _ s w => (s, w) }
+
+/-- The sign passes vJ's two clauses. (The vJ `Files`, restated here so the
+    narrowing can be seen.) -/
+theorem hingedSign_files_vJ : Filer.IsAccount Toy hingedSign ∧ Filer.Guided Toy hingedSign :=
+  ⟨⟨⟨(.cold, .engaged), .cold, rfl⟩,
+      ⟨(.cold, .engaged), .warm,
+        show Temp.cold ≠ Temp.warm from by decide⟩⟩,
+    ⟨(.cold, .released),
+      show SignStep.falls ≠ SignStep.stays from by decide⟩⟩
+
+/-- GPT's second theorem, as sent: changing only the latch preserves fit in
+    every world but changes the next step. -/
+theorem hingedSign_same_fit_different_step :
+    (∀ w, hingedSign.fits (.cold, .engaged) w ↔
+          hingedSign.fits (.cold, .released) w) ∧
+    hingedSign.next (.cold, .engaged) ≠
+      hingedSign.next (.cold, .released) :=
+  ⟨fun _ => Iff.rfl,
+    show SignStep.stays ≠ SignStep.falls from by decide⟩
+
+/-- THE SIGN DOES NOT FILE at vK: its author's second theorem is the witness. -/
+theorem hingedSign_not_readOff : ¬ Filer.ReadOff Toy hingedSign :=
+  fun h => hingedSign_same_fit_different_step.2
+    (h (.cold, .engaged) (.cold, .released) hingedSign_same_fit_different_step.1)
+
+theorem hingedSign_not_files : ¬ Filer.Files Toy hingedSign :=
+  fun h => hingedSign_not_readOff h.2.2.1
+
+/-! #### The direction run (11-4-26; vL): the hot rock -/
+
+/-- THE HOT ROCK (Verity's case, after the round; the first declared weak
+    point). Its state is its own temperature and whether it has cracked; its
+    temperature tracks the room, which is the room's doing and not a step of
+    the rock's; its step is to crack when warm. The crack is in the state so
+    that "the rock does something" is granted. `about` is declared as the
+    room, and nothing in vK's three clauses could say otherwise. -/
+inductive Fate | intact | cracked
+  deriving DecidableEq
+
+def hotRock : Filer Toy :=
+  { holder := 2, about := 1, S := Temp × Bool, W := Temp, Step := Fate,
+    held := (.cold, false),
+    fits := fun s w => s.1 = w,
+    next := fun s => match s.1 with | .cold => .intact | .warm => .cracked,
+    act := fun f s w => match f with | .intact => (s, w) | .cracked => ((s.1, true), w) }
+
+/-- THE ROCK PASSES vK: an account, guided, read off. -/
+theorem hotRock_files_vK :
+    Filer.IsAccount Toy hotRock ∧ Filer.Guided Toy hotRock ∧ Filer.ReadOff Toy hotRock :=
+  ⟨⟨⟨(.cold, false), .cold, rfl⟩,
+    ⟨(.cold, false), .warm, show Temp.cold ≠ Temp.warm from by decide⟩⟩,
+   ⟨(.warm, false), show Fate.cracked ≠ Fate.intact from by decide⟩,
+   fun s s' h => by
+     have e : s.1 = s'.1 := ((h s.1).1 rfl : s'.1 = s.1).symm
+     show (match s.1 with | .cold => Fate.intact | .warm => Fate.cracked) =
+          (match s'.1 with | .cold => Fate.intact | .warm => Fate.cracked)
+     rw [e]⟩
+
+/-- Whatever the rock's step, the room is untouched. -/
+theorem hotRock_room_untouched (f : Fate) (s : Temp × Bool) (w : Temp) :
+    (hotRock.act f s w).2 = w := by
+  cases f <;> rfl
+
+/-- Whatever the rock's step, what it comes to hold does not depend on the room. -/
+theorem hotRock_state_blind (f : Fate) (s : Temp × Bool) (w w' : Temp) :
+    (hotRock.act f s w).1 = (hotRock.act f s w').1 := by
+  cases f <;> rfl
+
+/-- THE ROCK IS NOT ENGAGED: nothing its step does connects what it holds with
+    the room. The thermostat, the vending machine and the contemplator are. -/
+theorem hotRock_not_engaged : ¬ Filer.Engaged Toy hotRock :=
+  fun h => h.elim
+    (fun ⟨s, s', w, hne⟩ => hne
+      ((hotRock_room_untouched _ s w).trans (hotRock_room_untouched _ s' w).symm))
+    (fun ⟨s, w, w', hne⟩ => hne (hotRock_state_blind _ s w w'))
+
+/-- THE ROCK DOES NOT FILE at vL. -/
+theorem hotRock_not_files : ¬ Filer.Files Toy hotRock :=
+  fun h => hotRock_not_engaged h.2.2.2
+
+/-! ### (3) The region: what hangs on the edge, as a set of steps — an experiment
+
+*What a Stake Is Made Of* §§5–6: the size of a stake is the region of the
+context that hangs on the edge — what depends on it, and how things go
+differently if the thing is not as held. §9 asks whether `Set Step` can
+represent that, with the steps and the dependency relation stated, and what
+the representation keeps and drops. `Step` is a type of steps; `Dep a b` says
+step `b` depends on step `a`. The region of a step is what is DOWNSTREAM of
+it under `Dep`: reached by following the dependencies, not collected by hand.
+
+Run in its own section with its own carriers, then as a frame, so the base
+development's `M` stays a bare type. -/
+
+section Region
+variable (Step : Type) (Dep : Step → Step → Prop)
+
+/-- A region: a set of steps. -/
+def Region : Type := Step → Prop
+
+/-- Nothing hangs here. -/
+def Region.empty : Region Step := fun _ => False
+
+/-- Downstream of `a`: reached from `a` by following one or more dependencies. -/
+inductive Downstream (a : Step) : Step → Prop
+  | step {b : Step} : Dep a b → Downstream a b
+  | tail {b c : Step} : Downstream a b → Dep b c → Downstream a c
+
+/-- The region that hangs on a step: everything downstream of it. -/
+def hangsOn (a : Step) : Region Step := fun b => Downstream Step Dep a b
+
+/-- FOLLOWING, NOT COLLECTING. A region is closed under the dependencies:
+    whatever depends on something in it is in it. -/
+theorem hangsOn_closed (a b c : Step) (hb : hangsOn Step Dep a b) (hbc : Dep b c) :
+    hangsOn Step Dep a c := Downstream.tail hb hbc
+
+/-- Inclusion of regions. -/
+def Region.sub (A B : Region Step) : Prop := ∀ x, A x → B x
+
+/-- Inclusion is a partial order on regions: reflexive, transitive,
+    antisymmetric. A mathematical fact about the chosen sets, and that is all
+    it is (the paper's §12b). -/
+theorem sub_refl (A : Region Step) : Region.sub Step A A := fun _ h => h
+
+theorem sub_trans (A B C : Region Step)
+    (h1 : Region.sub Step A B) (h2 : Region.sub Step B C) : Region.sub Step A C :=
+  fun x hx => h2 x (h1 x hx)
+
+theorem sub_antisymm (A B : Region Step)
+    (h1 : Region.sub Step A B) (h2 : Region.sub Step B A) : A = B := by
+  funext x
+  exact propext ⟨h1 x, h2 x⟩
+
+/-- INCLUSION WHERE IT HOLDS. If `b` hangs on `a`, then what hangs on `b`
+    hangs on `a`: a sub-dependency's region lies inside the region it rides
+    in. This is the one place inclusion arises FROM the dependencies rather
+    than being imposed on them. -/
+theorem hangsOn_sub_of_mem (a b : Step) (hb : hangsOn Step Dep a b) :
+    Region.sub Step (hangsOn Step Dep b) (hangsOn Step Dep a) := by
+  intro c hc
+  induction hc with
+  | step h => exact Downstream.tail hb h
+  | tail _ h ih => exact Downstream.tail ih h
+
+/-- An effect profile: how differently each step goes. Its SUPPORT is the
+    region it determines. -/
+def support (w : Step → Nat) : Region Step := fun x => w x ≠ 0
+
+/-- WHAT THE REPRESENTATION DROPS. A region keeps WHICH steps go differently
+    and drops HOW differently: two profiles with the same support give the
+    same region and are not the same profile. "Counting, not quantity" is
+    exactly this loss, and the paper owns it. -/
+theorem region_forgets_degree (x : Step) :
+    ∃ w₁ w₂ : Step → Nat, support Step w₁ = support Step w₂ ∧ w₁ ≠ w₂ := by
+  refine ⟨fun _ => 1, fun _ => 2, ?_, ?_⟩
+  · funext y
+    exact propext ⟨fun _ => Nat.succ_ne_zero 1, fun _ => Nat.succ_ne_zero 0⟩
+  · intro h
+    exact absurd (congrFun h x) (by decide)
+
+/-- Two ways to read a nested pair, both consistent with the inclusion. -/
+def firstTheSmaller (A B : Region Step) : Prop := Region.sub Step A B
+def firstTheLarger (A B : Region Step) : Prop := Region.sub Step B A
+
+/-- INCLUSION UNDERDETERMINES CHOICE. On any nested pair the inclusion fact is
+    consistent with putting the smaller region first and with putting the
+    larger first. A theorem about nested regions is not a theorem that
+    "dominated stakes lose"; which comes first needs its own grounds, and
+    they are not in the order. -/
+theorem inclusion_underdetermines (A B : Region Step) (h : Region.sub Step A B) :
+    firstTheSmaller Step A B ∧ firstTheLarger Step B A := ⟨h, h⟩
+
+/-- `M := Region Step`, `zero := Region.empty`: the base development with the
+    region as magnitude. Every theorem above holds here, since every one is
+    parametric in `F`. What becomes stateable is the stopping condition's form
+    with inclusion as the declared order; nothing is derived from it, and
+    which `le` is right is not the file's to say. -/
+def regionFrame (Thing Position : Type) (self : Position → Thing) : Frame :=
+  { Thing := Thing, M := Region Step, zero := Region.empty Step,
+    Position := Position, self := self }
+
+example (Thing Position : Type) (self : Position → Thing) (gain cost : Region Step) : Prop :=
+  WarrantedClosure (regionFrame Step Thing Position self) (Region.sub Step) gain cost
+
+/-- POSITION STILL DOES NOT CHANGE MAGNITUDE. An edge's region is a field; the
+    same `rfl` as `all_held`, in the region frame. The second hinge survives
+    giving `M` structure. -/
+theorem region_held (Thing Position : Type) (self : Position → Thing)
+    (e : Edge (regionFrame Step Thing Position self)) :
+    Held (regionFrame Step Thing Position self) (Edge.toStake _ e) := rfl
+
+end Region
+
+/-- A two-step world, to show the order is partial and not total. -/
+inductive Two | a | b
+  deriving DecidableEq
+
+def onlyA : Region Two := fun x => x = .a
+def onlyB : Region Two := fun x => x = .b
+
+/-- NOT A TOTAL ORDER. Two regions neither of which includes the other.
+    Inclusion cannot be a universal comparison rule because it does not
+    compare everything. -/
+theorem incomparable_regions : ¬ Region.sub Two onlyA onlyB ∧ ¬ Region.sub Two onlyB onlyA :=
+  ⟨fun h => Two.noConfusion (h Two.a rfl : Two.a = Two.b),
+   fun h => Two.noConfusion (h Two.b rfl : Two.b = Two.a)⟩
+
+/-! ### (4) Direction at the floor (*What a Stake Is Made Of* §7) -/
+
+/-- A direction: for each thing, the steps its own filing moves it toward. A
+    fact about the thing's dynamics; it takes no `Position`. -/
+def Direction (Step : Type) : Type := F.Thing → Step → Prop
+
+/-- Runs against a holder's direction — "bad for" the holder, represented as
+    the complement of what it moves toward. Position-free by type, like the
+    second hinge: the sign is the holder's, not a reader's. -/
+def RunsAgainst {Step : Type} (dir : Direction F Step) (x : F.Thing) (st : Step) : Prop :=
+  ¬ dir x st
+
+/-- A PREFERENCE IS A STAKE. What a thing wants is a dependency of its own,
+    held at size, on the sheet by being real — like the inquiry's stake. -/
+def PreferenceStake (holder : F.Thing) (m : F.M) : Stake F := ⟨holder, m⟩
+
+theorem preference_held (h : F.Thing) (m : F.M) : Held F (PreferenceStake F h m) := rfl
+
+theorem preference_on_sheet (h : F.Thing) (m : F.M) :
+    WholeSheet F (PreferenceStake F h m) := trivial
+
+/-- The reason a reader might give: this stake crosses my direction. `stepOf`
+    says which step a stake bears on; `me` is the reader. -/
+def Crosses {Step : Type} (dir : Direction F Step) (me : F.Thing)
+    (stepOf : Stake F → Step) (s : Stake F) : Prop :=
+  RunsAgainst F dir me (stepOf s)
+
+/-- DIRECTION AS A WEIGHT IS PARTIALITY. A reader that discounts a stake
+    because it crosses the reader's own direction, while reading an equal
+    stake that does not cross it at size, is partial: an instance of
+    `discount_for_reason_is_partial` with the reason "against my direction".
+    The direction is in the hypotheses and nowhere in the proof — which is
+    the separation §7 asked for: the sign enters at the floor, as the
+    holder's own stakes, and never as a multiplier on anyone else's. -/
+theorem direction_as_weight_is_partial {Step : Type} (dir : Direction F Step)
+    (stepOf : Stake F → Step) (v : Vantage F) (s t : Stake F)
+    (hs_with : ¬ Crosses F dir (F.self v.pos) stepOf s)
+    (ht_against : Crosses F dir (F.self v.pos) stepOf t)
+    (hm : s.magnitude = t.magnitude)
+    (hsv : InView F v.read s) (htv : InView F v.read t)
+    (hs : OpenHandAt F v.read s)
+    (m : F.M) (hadm : Admits F v.read t m) (hdisc : v.read.wt t m ≠ m) :
+    Partial F v :=
+  discount_for_reason_is_partial F (Crosses F dir (F.self v.pos) stepOf) v s t
+    hs_with ht_against hm hsv htv hs m hadm hdisc
+
+/-! ### (5) Comparison is not selection: a type of acts -/
+
+/-- An act: a move on a stake in reach (Report §6, "a type of actions").
+    Nothing about the hand is in it. -/
+structure ActOn (p : F.Position) where
+  target  : Stake F
+  inReach : Reach p target
+
+/-- ACTING WITHIN REACH IS NOT PARTIALITY ON ITS OWN. Partiality is a fact
+    about the reading; an act adds nothing to it. A vantage with the hand
+    open stays not partial whatever it acts on. -/
+theorem act_not_partial (v : Vantage F) (_a : ActOn F Reach v.pos)
+    (ho : OpenHand F v.read) : ¬ Partial F v :=
+  open_hand_not_partial F v ho
+
+/-- AND AN ACT DOES NOT CHANGE A SIZE. The target of an act is at its size,
+    like every stake: `rfl`. -/
+theorem act_target_held (p : F.Position) (a : ActOn F Reach p) : Held F a.target := rfl
+
+/-! ### (6) The model against the argument — what the run settles
+
+Checked. (1) The filing line types; the thermostat files and the rock does
+not. (2) `Stake` is recoverable from `Edge` by forgetting what the edge rides
+on; §5a's `D` is derived from a set of edges rather than supplied; an edge is
+held, on the sheet, and held when unseen, each by `rfl` or `trivial`. (3)
+Inclusion of regions is a partial order; it arises from the dependencies
+exactly where a sub-dependency rides inside another (`hangsOn_sub_of_mem`); it
+is not total (`incomparable_regions`); it drops degree
+(`region_forgets_degree`); it does not pick a direction of choice
+(`inclusion_underdetermines`); and with `M := Region Step` every theorem in the
+file still holds and the second hinge still holds (`region_held`). (4) A
+preference is a stake; reading another's stake down because it crosses my
+direction is partiality, by the one discount theorem. (5) An act on a stake
+in reach is typeable and adds nothing to partiality or to size.
+
+NOT settled, and not claimed. That a region IS the size of a stake: the file
+can represent the claim and check what follows from the representation; it
+cannot check the identification. That every holder of a stake is a filer:
+`Stake` does not carry its filer, and the run does not make it. That
+`Filer.Files` is the right floor: it is a definition, and it is the one the
+critic should now read, together with `hangsOn`. So the one declared
+definition did not become a theorem. What changed is where the definition
+sits: `Stake` can now be built from an account of filing and dependency
+instead of standing alone, and the pieces it is built from are each checkable
+for what they say. Definitions remain everywhere, as the paper's §8 said;
+there is one fewer that stands alone.
+
+(7) The outside round, 11-4 (vK). `Files` was read by critics who did not
+write it. One of the two declared weak points held up as declared: the hinged
+sign passed vJ's clauses with its account in one part of its state and its
+guidance in another, and the clause that closes it — read off the account —
+is now the third conjunct of `Files`. The other declared weak point stood
+open at vK: `about` is a field, so a system whose one variable both tracks a
+thing and drives its dynamics passes `ReadOff` too. The wording question was
+John's, not the file's, and he ruled it the same day: thinking is
+contextualizing, the floor is where contextualizing begins, the vending
+machine thinks one notch, and where the ordinary word places the thermostat
+is not CT's concern ("i love the phrease thinking is contextualizing.  i
+don't care about where the thermostat falls.").
+
+(8) The direction run, 11-4 (vL). The hot rock was built against vK and
+passed (`hotRock_files_vK`). The intended clause — misfit runs against what
+the holder moves toward — was tried first in a finite search over every
+possible target for each toy (the script is kept with the run note), and it
+cannot separate the rock from the thermostat: a dynamics that settles can be
+handed its settling set as its target, and then the rock "moves toward"
+cracking-when-warm as the thermostat moves toward the set point. What does
+separate them is whether the step connects the state with the thing at all.
+`act` is what a step does; `Engaged` is the fourth clause; the thermostat,
+the vending machine and the contemplator pass it by their own steps, and the
+rock fails it by two `rfl`-by-cases lemmas. Direction survives as what an
+engaged step does, not as the test. What is still declared, and said so:
+`fits` and `about`. A thermostat with a stuck strip files, badly, because its
+step still meets the room by its strip; the file now checks that a declared
+aboutness is backed by a step that meets the thing, and still cannot check
+what a state is of in the world. -/
+
+#print axioms edge_held
+#print axioms edge_on_sheet
+#print axioms unseen_edge_held
+#print axioms edge_rides
+#print axioms filer_edge_held
+#print axioms thermostat_files
+#print axioms rock_not_account
+#print axioms rock_not_files
+#print axioms hangsOn_closed
+#print axioms sub_refl
+#print axioms sub_trans
+#print axioms sub_antisymm
+#print axioms hangsOn_sub_of_mem
+#print axioms region_forgets_degree
+#print axioms inclusion_underdetermines
+#print axioms region_held
+#print axioms incomparable_regions
+#print axioms preference_held
+#print axioms preference_on_sheet
+#print axioms direction_as_weight_is_partial
+#print axioms act_not_partial
+#print axioms act_target_held
+#print axioms readOff_of_fits_eq
+#print axioms vending_files
+#print axioms contemplator_not_files
+#print axioms contemplator'_files
+#print axioms hingedSign_files_vJ
+#print axioms hingedSign_same_fit_different_step
+#print axioms hingedSign_not_files
+#print axioms thermostat_engaged
+#print axioms vending_engaged
+#print axioms contemplator'_engaged
+#print axioms hotRock_files_vK
+#print axioms hotRock_not_engaged
+#print axioms hotRock_not_files
+
+/-! ## 12b. The weighting as a filing — vM (11-4-26)
+
+At John's "again, aren't we saying: if you stop thinking...you're no longer
+doing ethics." The weighting clause (ruled 10-20): a weighting is a claim
+about the stake weighted, and its reason has to be about the dependencies.
+Link 5 put the first half in the type — `wt` returns an `M`. The inversion
+(ruled 10-29) says why it is a claim: a thinking step is a filing, a state
+held as of something, and a reader's hand on a stake is such a state. This
+section takes a reader's hand on one stake as a `Filer` and checks what the
+filing line says about it. The clause is then not a second ruling beside
+the inversion; it is the inversion applied to a weighting, with the dilemma
+that closes the lab result following in two theorems. -/
+
+/-- THE HAND AS A FILER. A reader's weighting of a stake, taken as a state
+    held as of that stake. The state is the size the hand reports; the ways
+    the stake can be are its sizes; the state fits when the report is the
+    size; the next step is to act on the reported size. `act` — what acting
+    on a size does to the stake's holder — is reach, which the base frame
+    does not have, and is a parameter. -/
+def handOf (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M) : Filer F :=
+  { holder := F.self v.pos, about := s.holder,
+    S := F.M, W := F.M, Step := F.M,
+    held := v.read.wt s s.magnitude,
+    fits := fun r m => r = m,
+    next := fun r => r,
+    act := act }
+
+/-- A WEIGHTING IS A CLAIM ABOUT THE STAKE (link 5, as a theorem rather than
+    a remark on the type): the hand is an account — it can fit the stake's
+    size and it can fail to. Needs two sizes to tell apart, and nothing else. -/
+theorem hand_is_account (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M)
+    (m₁ m₂ : F.M) (hne : m₁ ≠ m₂) : Filer.IsAccount F (handOf F v s act) :=
+  ⟨⟨m₁, m₁, rfl⟩, ⟨m₁, m₂, hne⟩⟩
+
+/-- The step is guided by the hand: another report would give another step. -/
+theorem hand_is_guided (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M)
+    (m : F.M) (hne : m ≠ v.read.wt s s.magnitude) : Filer.Guided F (handOf F v s act) :=
+  ⟨m, hne⟩
+
+/-- The step is read off what the hand says: the report IS the claim. -/
+theorem hand_is_readOff (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M) :
+    Filer.ReadOff F (handOf F v s act) :=
+  readOff_of_fits_eq F (handOf F v s act) (fun r r' h => ((h r).1 rfl : r' = r).symm)
+
+/-- A READING FILES when its acting is real: the three clauses the base frame
+    can check, and engagement as the hypothesis reach supplies. -/
+theorem hand_files (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M)
+    (m₁ m₂ : F.M) (hne : m₁ ≠ m₂) (m : F.M) (hm : m ≠ v.read.wt s s.magnitude)
+    (heng : Filer.Engaged F (handOf F v s act)) : Filer.Files F (handOf F v s act) :=
+  ⟨hand_is_account F v s act m₁ m₂ hne, hand_is_guided F v s act m hm,
+   hand_is_readOff F v s act, heng⟩
+
+/-- THE OPEN HAND IS THE FITTING STATE. If the estimate admits the stake's
+    size and the hand is open there, the held state fits the stake's way. -/
+theorem open_hand_fits (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M)
+    (hadm : Admits F v.read s s.magnitude) (ho : OpenHandAt F v.read s) :
+    (handOf F v s act).fits (handOf F v s act).held s.magnitude :=
+  ho s.magnitude hadm
+
+/-- PARTIALITY IS A MISFIT. A closed hand on an admitted size is a state that
+    fails to fit the stake at that size: the wrong is a wrong claim, not a
+    broken rule. "Partiality is false, not forbidden," as a filing fact. -/
+theorem closed_hand_misfits (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M)
+    (m : F.M) (_hadm : Admits F v.read s m) (hcl : v.read.wt s m ≠ m) :
+    ¬ (handOf F v s act).fits (v.read.wt s m) m :=
+  hcl
+
+/-- THE FIRST HORN. A reason that tracks size — the same for any two stakes
+    of one size — never yields a discount: there are no two equal stakes with
+    the reason on one and not the other. So "a correct reading of a smaller
+    stake" is the only thing such a reason can be. `discount_for_reason_is_partial`
+    is the second horn: a reason that does yield one is partiality. There is
+    no third thing, and the two theorems between them are the dilemma. -/
+theorem size_reason_no_discount (P : Stake F → Prop)
+    (hP : ∀ s t : Stake F, s.magnitude = t.magnitude → (P s ↔ P t)) :
+    ¬ ∃ s t : Stake F, s.magnitude = t.magnitude ∧ ¬ P s ∧ P t :=
+  fun ⟨s, t, hm, hns, hpt⟩ => hns ((hP s t hm).2 hpt)
+
+/-- THE SUBTRACTION TEST, FOR ANY FILER. A state that fits every way the thing
+    can be is not an account of the thing: there is nothing it could be wrong
+    about, so nothing it is right about. (The rock's failure, stated once for
+    all.) -/
+theorem always_fits_not_account (f : Filer F) (h : ∀ s w, f.fits s w) :
+    ¬ Filer.IsAccount F f :=
+  fun ha => ha.2.elim (fun s hs => hs.elim (fun w hw => hw (h s w)))
+
+/-- A hand that cannot be wrong: the same reader, the same stake, with every
+    report counted as fitting every size. -/
+def blindHand (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M) : Filer F :=
+  { handOf F v s act with fits := fun _ _ => True }
+
+/-- THE SUBTRACTION TEST, FOR THE HAND (vN). A weighting that cannot be wrong
+    about the stake is not a claim about it. Take away the hand's being about
+    the stake — its being able to fit or fail to fit the stake's size — and
+    what remains is a number with nothing it is a number of. This is the test
+    the inversion is checked by, written for the one case the ethics rests on:
+    a weighting is a filing because a weighting that was not one would not be
+    a weighting. -/
+theorem blind_hand_not_account (v : Vantage F) (s : Stake F) (act : F.M → F.M → F.M → F.M × F.M) :
+    ¬ Filer.IsAccount F (blindHand F v s act) :=
+  always_fits_not_account F (blindHand F v s act) (fun _ _ => trivial)
+
+/-- Acting on a size, in the toy, with nothing to act on: the parameter at its
+    emptiest, so that the toy facts below are about the hand and not the reach. -/
+def noAct : Fin 3 → Fin 3 → Fin 3 → Fin 3 × Fin 3 := fun _ st w => (st, w)
+
+/-- The discounter's hand on the stranger's size-2 stake reports 1 at 2: a misfit. -/
+theorem discounter_hand_misfits :
+    ¬ (handOf Toy ⟨0, readN⟩ ⟨2, 2⟩ noAct).fits (handOf Toy ⟨0, readN⟩ ⟨2, 2⟩ noAct).held (2 : Fin 3) :=
+  show readN.wt ⟨2, 2⟩ 2 ≠ 2 from by decide
+
+/-- The sun's hand on the same stake reports 2 at 2: it fits. -/
+theorem sun_hand_fits :
+    (handOf Toy ⟨0, readA⟩ ⟨2, 2⟩ noAct).fits (handOf Toy ⟨0, readA⟩ ⟨2, 2⟩ noAct).held (2 : Fin 3) :=
+  rfl
+
+#print axioms hand_is_account
+#print axioms hand_is_guided
+#print axioms hand_is_readOff
+#print axioms hand_files
+#print axioms open_hand_fits
+#print axioms closed_hand_misfits
+#print axioms size_reason_no_discount
+#print axioms always_fits_not_account
+#print axioms blind_hand_not_account
+#print axioms discounter_hand_misfits
+#print axioms sun_hand_fits
+
+/-! ## 12c. "About the dependencies," in the region frame — vO (11-5-26)
+
+The weighting clause (ruled 10-20): a weighting is a claim about the stake
+weighted, and its reason has to be about the dependencies. §12b put the first
+half in the type and took "about the dependencies" as "tracks size," the base
+frame's only handle on the dependencies. The run note said the restatement in
+the region frame was owed. This is it. In the region frame a stake's
+magnitude is `hangsOn Dep a`, the set of steps downstream of the edge's step;
+"a function of the magnitude" and "a function of what hangs on the edge" are
+then one predicate, and the clause's phrase can be said where it means what
+it says. -/
+
+/-- ABOUT THE DEPENDENCIES. A reason on stakes is about the dependencies when
+    its verdict is a function of the stake's size and of nothing else — not
+    of the holder, not of the reader's position, not of the hour. In the base
+    frame the size is a bare `M`; in the region frame it is the region hanging
+    on the edge, and this definition reads literally. -/
+def AboutTheDependencies (P : Stake F → Prop) : Prop :=
+  ∃ Q : F.M → Prop, ∀ s, P s ↔ Q s.magnitude
+
+/-- A reason about the dependencies tracks size: two stakes of one size get
+    one verdict. §12b's hypothesis, derived from the definition. -/
+theorem about_deps_tracks_size (P : Stake F → Prop) (h : AboutTheDependencies F P) :
+    ∀ s t : Stake F, s.magnitude = t.magnitude → (P s ↔ P t) :=
+  fun s t hm => h.elim fun Q hQ =>
+    ⟨fun hs => (hQ t).2 (Eq.mp (congrArg Q hm) ((hQ s).1 hs)),
+     fun ht => (hQ s).2 (Eq.mpr (congrArg Q hm) ((hQ t).1 ht))⟩
+
+/-- THE FIRST HORN, RESTATED. A reason about the dependencies never yields a
+    discount: there are no two equal stakes with the reason on one and not the
+    other. So such a reason can only be a correct reading of a smaller stake. -/
+theorem about_deps_no_discount (P : Stake F → Prop) (h : AboutTheDependencies F P) :
+    ¬ ∃ s t : Stake F, s.magnitude = t.magnitude ∧ ¬ P s ∧ P t :=
+  size_reason_no_discount F P (about_deps_tracks_size F P h)
+
+/-- THE DILEMMA, AS ONE THEOREM — "no third thing." Take any reason and any
+    discount it yields: two stakes of one size, the reason on one and not the
+    other, the hand open on the one without it and closed on the one with it.
+    Then the reason is NOT about the dependencies, AND the reader is partial.
+    The two horns are the two conjuncts. What the statement excludes is the
+    third thing — a reason that yields a discount and is about the
+    dependencies — and it excludes it for every reason at once. -/
+theorem discount_dilemma (P : Stake F → Prop) (v : Vantage F) (s t : Stake F)
+    (hnot : ¬ P s) (hyes : P t) (hm : s.magnitude = t.magnitude)
+    (hsv : InView F v.read s) (htv : InView F v.read t)
+    (hs : OpenHandAt F v.read s)
+    (m : F.M) (hadm : Admits F v.read t m) (hdisc : v.read.wt t m ≠ m) :
+    ¬ AboutTheDependencies F P ∧ Partial F v :=
+  ⟨fun h => about_deps_no_discount F P h ⟨s, t, hm, hnot, hyes⟩,
+   discount_for_reason_is_partial F P v s t hnot hyes hm hsv htv hs m hadm hdisc⟩
+
+section RegionReason
+variable (Step : Type) (Dep : Step → Step → Prop)
+variable (Thing Position : Type) (self : Position → Thing)
+
+/-- A reason stated on regions — on what hangs on an edge — lifted to the
+    stakes of the region frame, whose magnitudes are regions. -/
+def ofRegion (Q : Region Step → Prop) :
+    Stake (regionFrame Step Thing Position self) → Prop :=
+  fun s => Q s.magnitude
+
+/-- IN THE REGION FRAME THE CLAUSE READS LITERALLY. A reason that is a
+    function of what hangs on the edge is about the dependencies. -/
+theorem ofRegion_about_deps (Q : Region Step → Prop) :
+    AboutTheDependencies (regionFrame Step Thing Position self)
+      (ofRegion Step Thing Position self Q) :=
+  ⟨Q, fun _ => Iff.rfl⟩
+
+/-- THE RESTATEMENT OWED. In the frame where size is the region, a reason that
+    is a function of what hangs on the edge never yields a discount. "Tracks
+    size" (§12b) and "about the dependencies" (the clause) are one hypothesis
+    here. -/
+theorem region_reason_no_discount (Q : Region Step → Prop) :
+    ¬ ∃ s t : Stake (regionFrame Step Thing Position self),
+      s.magnitude = t.magnitude ∧
+      ¬ ofRegion Step Thing Position self Q s ∧ ofRegion Step Thing Position self Q t :=
+  about_deps_no_discount (regionFrame Step Thing Position self)
+    (ofRegion Step Thing Position self Q) (ofRegion_about_deps Step Thing Position self Q)
+
+/-- An edge built from a step: its magnitude is what hangs on that step. -/
+def edgeOf (holder about : Thing) (a : Step) : Edge (regionFrame Step Thing Position self) :=
+  ⟨holder, about, hangsOn Step Dep a⟩
+
+/-- ON SUCH AN EDGE, A REASON ABOUT THE DEPENDENCIES IS `Q (hangsOn Dep a)` —
+    a function of what hangs on the edge, by `rfl`. This is the sentence the
+    run note owed, as a definitional equality. -/
+theorem ofRegion_edge (Q : Region Step → Prop) (holder about : Thing) (a : Step) :
+    ofRegion Step Thing Position self Q
+      (Edge.toStake _ (edgeOf Step Dep Thing Position self holder about a))
+      = Q (hangsOn Step Dep a) := rfl
+
+/-- A reason about WHO holds the edge. -/
+def holderReason (me : Thing) : Stake (regionFrame Step Thing Position self) → Prop :=
+  fun s => s.holder = me
+
+/-- NOT ABOUT THE DEPENDENCIES. As soon as two holders can share a region, a
+    reason that reads the holder is not a function of the region: the same
+    dependencies, two verdicts. "Mine" is such a reason (link 7). -/
+theorem holder_reason_not_about_deps (me other : Thing) (hne : me ≠ other) (R : Region Step) :
+    ¬ AboutTheDependencies (regionFrame Step Thing Position self)
+        (holderReason Step Thing Position self me) :=
+  fun h =>
+    hne ((about_deps_tracks_size _ _ h ⟨me, R⟩ ⟨other, R⟩ rfl).1 rfl).symm
+
+end RegionReason
+
+/-- The two-step world as a region frame: two things, each its own position. -/
+def twoFrame : Frame := regionFrame Two Two Two id
+
+/-- In the toy: "the edge reaches step b" is about the dependencies; "the holder
+    is a" is not — the stakes ⟨a, onlyB⟩ and ⟨b, onlyB⟩ share a region. -/
+theorem toy_reach_about_deps :
+    AboutTheDependencies twoFrame (ofRegion Two Two Two id (fun R => R Two.b)) :=
+  ofRegion_about_deps Two Two Two id _
+
+theorem toy_holder_not_about_deps :
+    ¬ AboutTheDependencies twoFrame (holderReason Two Two Two id Two.a) :=
+  holder_reason_not_about_deps Two Two Two id Two.a Two.b (fun h => Two.noConfusion h) onlyB
+
+#print axioms about_deps_tracks_size
+#print axioms about_deps_no_discount
+#print axioms discount_dilemma
+#print axioms ofRegion_about_deps
+#print axioms region_reason_no_discount
+#print axioms ofRegion_edge
+#print axioms holder_reason_not_about_deps
+#print axioms toy_reach_about_deps
+#print axioms toy_holder_not_about_deps
+
 /-! ## 13. What this rests on, in the world
 
 Three things, and nothing else.
@@ -1525,9 +2588,34 @@ narrowed to what the prose said. The factoring of a reading into estimate and
 weighting is not a premise; it is the type saying what the prose said —
 that reach and accuracy are one kind of term and the hand is another. What
 remains empirical is resolution: which stakes are in view, how sharply. That
-is correspondence work, not foundation.
+is correspondence work, not foundation. vJ adds none: `Filer`, `Edge`,
+`Region`, `Direction` and `ActOn` are types beside `Stake`, not claims about
+the world; the dependency relation `Dep`, the direction `dir` and the reach
+are parameters, as `D` and `Reach` were. What the run shows is that `Stake`
+is recoverable from them and that every theorem holds with the region as
+magnitude. The one definition with weight has not become a theorem; it has
+become `Filer.Files` and `hangsOn`, in the open. vK adds none: it narrows
+`Files` by one clause toward the word, at an outside reader's compiled case,
+as vI narrowed `Partial`; nothing was added to do it, and what the clause says
+— two states that say the same thing do the same thing — is what "read off
+the state" meant all along. vL adds one field to `Filer` and nothing to
+`Frame`: `act`, what a step does, which a filer always had and the type had
+not written down; the fourth clause, engaged, is read off it. What the run
+could not do is also recorded there: it could not make "what the holder moves
+toward" a test, and it says why. vM adds none: `handOf` is a reader's hand
+seen as a `Filer`, with no new carrier and `act` a parameter as `Reach` is;
+what it shows is that the weighting clause is what the filing line already
+says about a hand, so the lab result rests on the inversion and the stake
+definition, not on a third ruling. vN adds none: the subtraction test, which
+the file has carried since the rock, is written for the hand; the inversion
+it checks remains a ruling, and the file says so. vO adds none:
+`AboutTheDependencies` is a predicate on reasons and `ofRegion` a lift, with
+no new carrier; what it shows is that the clause's "about the dependencies"
+and §12b's "tracks size" are one hypothesis in the frame where size is the
+region, and that the dilemma is one theorem. The loss it inherits is §12a
+(3)'s, declared there: the region keeps which steps go differently and drops
+how much.
 
 The word "God" does not occur in this file. -/
 
 end CT
-
