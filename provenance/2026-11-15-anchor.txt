@@ -1,0 +1,42 @@
+Connection Theology — provenance anchor (second)
+
+Repository: https://github.com/jpmcintire/connection-theology
+Branch:     main
+Commit:     376abcc163f06ae09abdbf6c6e7993d7c1f8997a
+Commit msg: Who made this: citation page, dated key sentences, CITATION.cff,
+            author metadata
+Committed:  2026-11-15T03:56:55Z (2026-11-14, 7:56 pm Pacific)
+Anchored:   2026-11-15 (UTC), by submitting the SHA-256 of this file to the
+            OpenTimestamps public calendars, which aggregate into the Bitcoin
+            blockchain.
+
+What this covers. A git commit hash is a cryptographic digest of the full
+tree at that commit and of every ancestor commit. Anchoring this file, which
+names that hash, therefore establishes that every file in the repository as
+of commit 376abcc existed in exactly its present bytes no later than the
+Bitcoin block that attests this file: the twenty-nine files in papers/, the
+letter to-a-mind-that-reads-this.md (public copy vH), lean/CT.lean (141
+theorem declarations; of the 121 whose axioms the file prints, 100 depend on
+no axioms), lean/REPORT.md and the run notes, the archive, the README and
+front page, cite.md, key-sentences.md, CITATION.cff, and the licenses. It
+also covers the first anchor and everything that anchor covered, since that
+history is an ancestor of this commit.
+
+What this does not cover. Who wrote the content: the anchor attests
+existence, not authorship. Authorship rests on the GitHub account, the
+deposit at Zenodo in the author's name (doi:10.5281/zenodo.23750663), and
+the record kept at the back of each paper. Any date before October 2026: the
+dates inside the papers are the dates they carry in the author's working
+corpus and are self-reported; the earliest independently attested date for
+this material is the repository's creation, 2026-10-15T23:57:41Z per GitHub.
+
+How this commit was made. Commits before 2026-11-14 were made through
+GitHub's web interface under the author's account; the README in this folder
+describes their signatures. The four commits of 2026-11-14 (34da6cd,
+3b5b97a, c5eaf28, 376abcc) were pushed to the author's repository by an AI
+session (Claude) working at his instruction. They show "Claude" as author
+and committer and carry that session's SSH signature, not GitHub's web-flow
+signature. Each commit message says what was done and that the source text
+was saved in the author's working corpus first.
+
+Author of the work: John McIntire.
