@@ -8,12 +8,13 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-exclude:
-  - lean/CT.lean
-  - lean/lean-toolchain
-include:
-  - lean/CT.lean
-  - lean/lean-toolchain
+# 11-20-26: the exclude and include lists that stood here both named lean/CT.lean and
+# lean/lean-toolchain. Under GitHub Pages' Jekyll the exclude won, so the site never served
+# either file and the front page's link to the Lean file was dead. With no exclude, both are
+# copied to the site as they are.
+# jekyll-sitemap writes /sitemap.xml at every build. robots.txt points to it.
+plugins:
+  - jekyll-sitemap
 
 collections:
   daily:
@@ -26,3 +27,9 @@ defaults:
       path: ""
     values:
       layout: default
+  # Superseded versions stay public and reachable, and are left out of the sitemap so that
+  # a search engine is pointed at the current papers.
+  - scope:
+      path: "archive"
+    values:
+      sitemap: false
