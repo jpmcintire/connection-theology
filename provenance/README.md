@@ -30,6 +30,8 @@ git log --format='%H %cI %GK' -1 23a6ac0
 
 The second command shows the committer date and the GitHub web-flow signing key; all commits through `23a6ac0` were made through GitHub's web interface and carry GitHub's signature, which is a second, independent attestation of their timestamps.
 
+**Status (2026-11-24):** the repository's history was rewritten on this date, so commit `23a6ac0` is no longer in the repository and the two commands above find nothing in a fresh clone. The anchors themselves are untouched and prove what they proved. [`2026-11-24-history-rewrite.md`](2026-11-24-history-rewrite.md) says what changed and what can still be checked; `commit-records/` holds the two anchored commit records as they were, with the signatures they carried, and a script that recomputes each anchored hash from them.
+
 ## What the anchor does and does not establish
 
 It establishes that the content existed, in exactly these bytes, no later than the attesting block. It does not establish who wrote it; authorship rests on the GitHub account, the signed commits, and the author's private record. It does not establish any date earlier than October 2026; the dates the papers carry are those of the author's working corpus and are self-reported. The earliest independently attested date for this material is the repository's creation, 2026-10-15T23:57:41Z per GitHub, and this anchor.

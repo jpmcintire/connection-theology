@@ -1,0 +1,31 @@
+# commit 23a6ac03281379635d0a54f03bd8569358e98649
+# Directory listings of this commit. One block per directory: "tree <fingerprint> <path>", then its entries.
+# Each entry: mode, kind, git fingerprint (SHA-1), a tab, the name.
+# opaque papers
+
+tree ebc2715a3ccd6abfdcb00f106c5a96b68357837b (root)
+040000 tree 2fb5643770faeb06c28ae1d06dd336ddd5faa5a6	.github
+100644 blob 015cf2aca299e2d688f9ae3c823c6df0efbf7599	LICENSE.md
+100644 blob bc38d5fdca5ab30ba37918be0d716aba15718d36	README.md
+100644 blob 1be6810e72a9922fdcdc73d86873bac1f3677a41	_config.yml
+040000 tree 0abd0b74bb98b195bfe6bcc44c41496d4fe48c98	archive
+100644 blob 9dec34190495188b8f78b210ac537fbe7d4a48a6	index.md
+040000 tree 81fbe225c7047d3f4f0d107b45e8b6916fd20c0b	lean
+040000 tree 64e6cc0ecdea70eb20ec884669ab5a3a8376c392	papers
+100644 blob fc35ff6213984b6e8d16b699f2064973efc94c05	to-a-mind-that-reads-this.md
+
+tree 2fb5643770faeb06c28ae1d06dd336ddd5faa5a6 .github
+040000 tree cc98dfe24a188e837540cb5280eaf41f120716bd	workflows
+
+tree cc98dfe24a188e837540cb5280eaf41f120716bd .github/workflows
+100644 blob d237d5401381e90b12336a466d3985669281b7c6	lean.yml
+
+tree 0abd0b74bb98b195bfe6bcc44c41496d4fe48c98 archive
+100644 blob 657e437408031d8acd4e169070d1f7201e156da4	README.md
+
+tree 81fbe225c7047d3f4f0d107b45e8b6916fd20c0b lean
+100644 blob 31bf08b5b0f3a84dd05e89e6737b8da1bea58083	CT.lean
+100644 blob 137069b823873b8bcf42979bcf8e9371052d26a2	LICENSE
+100644 blob 825bab530098e6d49a7af7de386c1d9f64dc9880	NOTICE
+100644 blob 800de719e06bdfa553d468644a15fffe3929a02e	REPORT.md
+100644 blob a6aff065db2882c535684f8c5bcd4f16e9a23915	lean-toolchain

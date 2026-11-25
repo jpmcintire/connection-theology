@@ -1,0 +1,29 @@
+tree a312bc2c43b3a619421936646cebd2e4cf3bd2eb
+parent c5eaf28c81aa6cbe7a850c72295724332efe09d8
+author Claude <noreply@anthropic.com> 1794715015 -0800
+committer Claude <noreply@anthropic.com> 1794715015 -0800
+gpgsig -----BEGIN SSH SIGNATURE-----
+ U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgrLzsfFISF4by8Q+FKz27YpkK1USsBB+m
+ amu1QkJnbDsAAAADZ2l0AAAAAAAAAAZzaGE1MTIAAABTAAAAC3NzaC1lZDI1NTE5AAAAQPNJPDkI
+ lyH+rvTg2Lw+3DdaoReg+Aj0fHZbr9IwdjLfTJRmq2NSyZ/7u8MHuzEH8yDPWSboRkA4KM+tJYI9
+ ygI=
+ -----END SSH SIGNATURE-----
+
+Who made this: citation page, dated key sentences, CITATION.cff, author metadata
+
+cite.md: authorship, how the work was made, how to cite it, and the
+independent records of its dates.
+key-sentences.md: the author's own sentences at the turns of the work,
+verbatim, each with its date and the paper whose record holds it. Every
+quotation was checked mechanically against the paper it names.
+CITATION.cff: the same in machine-readable form (validated, CFF 1.2.0).
+_config.yml and _layouts/default.html: the author's name in each page's
+metadata (meta author, schema.org JSON-LD), a "Who made this" link in the
+navigation, the name in the footer; the Lean reference in the layout's
+hover text brought to the current file.
+
+Sources saved first in Dropbox (Focus - Outreach/Site), dated 11.14.26.
+Byte-identical.
+
+Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01JM1sQgbWf1daT43nNGVuZB

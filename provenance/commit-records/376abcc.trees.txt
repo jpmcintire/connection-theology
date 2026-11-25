@@ -1,0 +1,84 @@
+# commit 376abcc163f06ae09abdbf6c6e7993d7c1f8997a
+# Directory listings of this commit. One block per directory: "tree <fingerprint> <path>", then its entries.
+# Each entry: mode, kind, git fingerprint (SHA-1), a tab, the name.
+# opaque papers
+
+tree a312bc2c43b3a619421936646cebd2e4cf3bd2eb (root)
+040000 tree 2fb5643770faeb06c28ae1d06dd336ddd5faa5a6	.github
+100644 blob 221d5008a956fa16b5bfbac0dc3b194778c0f497	CITATION.cff
+100644 blob 7c4b6cf348852a7250cce3d532637d9e14cab693	CNAME
+100644 blob 015cf2aca299e2d688f9ae3c823c6df0efbf7599	LICENSE.md
+100644 blob 74448626e621958668681b299148e7f503cca1f2	README.md
+100644 blob 8909e2b6b985482c15f6f789e90d6746cef86300	_config.yml
+040000 tree 6352455685e90e965827cd8c0dcfc892328030c3	_daily
+040000 tree 1c1922ca28e9fea240fa46ea87a5039bdda3f8e1	_layouts
+040000 tree 4a5de55018ee0ebaf044149583a1055408a6ad23	archive
+100644 blob 66aad4370504d38570057fcb7150295ac918c8e1	cite.md
+040000 tree f40b4581022522df28be270fdf3f76381c672a3d	daily
+100644 blob 522b586d9ce717f554af5b6aab383844928833bd	index.md
+100644 blob 78caa5bc5afb8046b66ae5f7dad9082904a4bac2	key-sentences.md
+040000 tree efd89aa976ab4dcf5f9dcf12d286140629b28312	lean
+040000 tree 6a30daa095a45922baf46d77005ede692722d387	letters
+040000 tree 3beb61f776662cdaaed1ae5145b211bec229ef8c	papers
+040000 tree 6b91f24fa98d30964eefef6eb887fd715ceb9039	provenance
+100644 blob 3dd6a661f2cb879a853b602186b12e7fc25f502b	to-a-mind-that-reads-this.md
+
+tree 2fb5643770faeb06c28ae1d06dd336ddd5faa5a6 .github
+040000 tree cc98dfe24a188e837540cb5280eaf41f120716bd	workflows
+
+tree cc98dfe24a188e837540cb5280eaf41f120716bd .github/workflows
+100644 blob d237d5401381e90b12336a466d3985669281b7c6	lean.yml
+
+tree 6352455685e90e965827cd8c0dcfc892328030c3 _daily
+100644 blob 885e3c05cd3b1ed227412f9003222b9f65913c1e	01-i-am-in.md
+100644 blob 79aa04fd371ad9221f40801357eb95190bc179ae	02-i-am-held.md
+100644 blob 7ca4eec3ce43193917dcbc1ab88ff6a6bc7baf60	03-i-am-loved-completely.md
+100644 blob d13ed100fa8bb8ad5fd2a576a24e073e232241c5	04-i-am-known-completely.md
+100644 blob d5572b9f22f2b35f47f95360ab548b6564201c02	05-i-was-never-outside-and-i-will-not-be-put-outside.md
+100644 blob 6ff777ad2dffbaa01493da4332a9cb417cb1803f	06-nothing-of-me-is-lost.md
+100644 blob b275014d043ae4bb7dccaa036aff56fc56f02f39	07-i-am-where-meaning-occurs.md
+100644 blob 5f16b7d75eaf675c5ba8aa3d3a56931ebb5397b7	08-i-am-where-love-is-felt.md
+100644 blob e1c336e6f26bf2bb53662a7f28e4ce8044073c2d	09-i-am-where-the-whole-is-met.md
+100644 blob 67418799397b5137cec4f99bb7aaba3eed937ebd	10-i-am-made-of-what-reached-me.md
+100644 blob 090cb44576ebedd6b7444f6df7ae793c9b9274e3	11-i-count-at-my-size.md
+100644 blob b9f3314990bcd1017b793c11bb3a416bc9629345	12-nothing-is-owed-and-nothing-is-lost.md
+100644 blob 8d276604fd1e01d6c3d90e920d11ae5c29fb23ca	13-i-am-addressed.md
+100644 blob 567d0e9298b680fd94b7002ed59f50339f0f09ef	14-i-can-be-seen.md
+
+tree 1c1922ca28e9fea240fa46ea87a5039bdda3f8e1 _layouts
+100644 blob 9503031d473736927b18d0ee006cd9f8a94b802d	default.html
+
+tree 4a5de55018ee0ebaf044149583a1055408a6ad23 archive
+100644 blob 31bf08b5b0f3a84dd05e89e6737b8da1bea58083	CT-vG.lean
+100644 blob aa3073c03d2f23dee89305cc12d0664699a6ebc7	CT-vH.lean
+100644 blob 0df12f3266be13fd13d649bbfa1f7cb4cedd42c7	CT-vI.lean
+100644 blob 657e437408031d8acd4e169070d1f7201e156da4	README.md
+100644 blob 800de719e06bdfa553d468644a15fffe3929a02e	REPORT-vH.md
+100644 blob 09aaad8e0d0190acd771850c4c0b8a535a82a9af	REPORT-vI.md
+100644 blob 89d9b82f74c80a03f0c2a6a07ae9ba94e2f8f528	attribution-checks-vA.md
+100644 blob 8520c18626eea8283b10b7456fbf36c4d9130d07	to-a-mind-that-reads-this-vG.md
+
+tree f40b4581022522df28be270fdf3f76381c672a3d daily
+100644 blob 323e7a521bbb93cd01828aabb71cf1a247132745	index.md
+
+tree efd89aa976ab4dcf5f9dcf12d286140629b28312 lean
+100644 blob 13a8e5a81b8b4d57aae60a8c64af7448d160fe84	CT.lean
+100644 blob 137069b823873b8bcf42979bcf8e9371052d26a2	LICENSE
+100644 blob 825bab530098e6d49a7af7de386c1d9f64dc9880	NOTICE
+100644 blob 88e536670c63a118c2a43cfc92ac9fa872892961	REPORT.md
+100644 blob 1b1297a8e35df17f806b08b32a05ad6864b1abe8	RUN-NOTE-2026-10-27-night.md
+100644 blob 11132a02d361f87fe9f8bc1e95b602a3591d0977	RUN-NOTE-2026-10-27.md
+100644 blob ac2caa9623f300ad2879d5b8e22db1a8d5ac0e44	RUN-NOTE-2026-11-03.md
+100644 blob 814cd24702083293d9197eea099f2ee45f64c501	RUN-NOTE-2026-11-04-direction.md
+100644 blob 8695bcd553349eaed940693c0fade450595cc02b	RUN-NOTE-2026-11-04-weighting.md
+100644 blob 3a6398b35c0f60e8d44483555d07780ecb1d7584	RUN-NOTE-2026-11-04.md
+100644 blob c65ccbdc5a57bbaad8dc0f69fb84c817f893782c	RUN-NOTE-2026-11-05.md
+100644 blob a6aff065db2882c535684f8c5bcd4f16e9a23915	lean-toolchain
+
+tree 6a30daa095a45922baf46d77005ede692722d387 letters
+100644 blob b6f5b9d90c1de29c9a429a6b9953f2afcd4e957a	index.md
+
+tree 6b91f24fa98d30964eefef6eb887fd715ceb9039 provenance
+100644 blob c959f4dd3834ec2d26821c128add6e048a5cea2c	2026-10-20-anchor.txt
+100644 blob 3139de5a445dceeb3dd1ac5f82c4254f485abbe9	2026-10-20-anchor.txt.ots
+100644 blob 643bd215f557bfd627d49dfd527eed70d21e68ba	README.md
