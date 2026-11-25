@@ -14,4 +14,4 @@ These earlier public editions are preserved byte-for-byte.
 
 ## Withdrawn on November 24, 2026
 
-Four earlier public editions were withdrawn and are not preserved here: No Exemption vB, One Operation vC, What Love Is vF, and True Representations Remain Representations vD. Each current edition says in its status line what was changed.
+Four earlier public editions were withdrawn and are not preserved here: No Exemption vB and vE, One Operation vC, What Love Is vF, and True Representations Remain Representations vD. Each current edition says in its status line what was changed.
